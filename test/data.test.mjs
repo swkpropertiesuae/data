@@ -1,0 +1,14 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {createHash} from 'node:crypto';
+import {csvObjects,parseCSV,csvExport} from '../src/csv.mjs';
+import {getIntent,evidenceAnswer,numbersSupported} from '../src/retrieval.mjs';
+const manifest=JSON.parse(fs.readFileSync('data/manifest.json'));
+test('all imported datasets match the recorded publisher files and row counts',()=>{let total=0;for(const d of manifest.datasets){const bytes=fs.readFileSync(d.file);assert.equal(createHash('sha256').update(bytes).digest('hex'),d.sha256,d.id);const rows=csvObjects(bytes.toString());assert.equal(rows.length,d.rows,d.id);assert.deepEqual(Object.keys(rows[0]),d.columns);total+=rows.length;}assert.equal(total,9208);});
+test('CSV preserves quoted commas, quotes and line breaks',()=>{assert.deepEqual(parseCSV('a,b\r\n"Bay, Dubai","say ""yes""\nnext"\r\n'),[['a','b'],['Bay, Dubai','say "yes"\nnext']]);});
+test('CSV export neutralizes spreadsheet formulas',()=>{assert.ok(csvExport([{x:'=HYPERLINK("bad")'}],['x']).includes("'=HYPERLINK"));});
+test('questions about other emirates cannot receive Dubai numerical benchmarks',()=>{const intent=getIntent('What is the rental yield in Abu Dhabi?');assert.equal(intent.emirate,'abu dhabi');const answer=evidenceAnswer({question:'Abu Dhabi',intent,rows:[{yield_pct:8.83}],total:1,sources:[]});assert.ok(!answer.includes('8.83'));assert.ok(answer.includes('do not have loaded'));});
+test('private owner and investor contact questions get an explicit coverage boundary',()=>{const intent=getIntent('Give me owner phone numbers');assert.ok(intent.privacy);assert.ok(evidenceAnswer({question:'',intent,rows:[],total:0,sources:[]}).includes('not included'));});
+test('numerical hallucinations are rejected',()=>{assert.equal(numbersSupported('The median is AED 1,050,000',[{price_median:'1050000.0'}]),true);assert.equal(numbersSupported('Guaranteed yield 42.7%', [{yield_pct:'6.24'}]),false);});
+test('catalogued sources are not presented as loaded without a corresponding seed file',()=>{const sources=JSON.parse(fs.readFileSync('data/catalog.json'));assert.equal(sources.length,83);for(const s of sources.filter(s=>s.status==='loaded'))assert.ok(fs.existsSync(s.localFile));});

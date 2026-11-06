@@ -1,0 +1,14 @@
+{
+  "dataset": "Dubai Real Estate Sales Transactions",
+  "publisher": "Dubai Real Estate Data",
+  "upstreamPublisher": "Dubai Land Department",
+  "license": "CC BY 4.0 (publisher declaration)",
+  "dataThrough": "2026-11-02",
+  "publisherRowCount": 1382848,
+  "files": [
+    {"format":"csv","filename":"dld_sales_transactions.csv","source":"https://huggingface.co/datasets/dubairealestatedata/dubai-real-estate-sales-transactions/resolve/main/dld_sales_transactions.csv","download":"https://data.swk.rent/api/archive?file=dld_sales_transactions.csv","storage":"R2","bytes":240530566},
+    {"format":"parquet","filename":"dld_sales_transactions.parquet","source":"https://huggingface.co/datasets/dubairealestatedata/dubai-real-estate-sales-transactions/resolve/main/dld_sales_transactions.parquet","download":"https://data.swk.rent/api/archive?file=dld_sales_transactions.parquet","storage":"R2"}
+  ],
+  "indexProgress":"https://data.swk.rent/api/stats",
+  "note":"Archive acquisition and indexing completion are separate states. Query live stats for verified counts. This fixed snapshot does not imply current daily transaction coverage."
+}

@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS records (id TEXT PRIMARY KEY,dataset TEXT NOT NULL,emirate TEXT NOT NULL DEFAULT 'Dubai',name TEXT,search_text TEXT NOT NULL,payload TEXT NOT NULL,source_url TEXT,data_through TEXT NOT NULL,imported_at TEXT NOT NULL);
+CREATE INDEX IF NOT EXISTS records_dataset ON records(dataset);
+CREATE INDEX IF NOT EXISTS records_name ON records(name COLLATE NOCASE);
+CREATE TABLE IF NOT EXISTS dataset_status (id TEXT PRIMARY KEY,rows INTEGER NOT NULL DEFAULT 0,data_through TEXT,imported_at TEXT,status TEXT NOT NULL,last_error TEXT);
+CREATE TABLE IF NOT EXISTS usage_budget (key TEXT PRIMARY KEY,count INTEGER NOT NULL DEFAULT 0,expires_at INTEGER NOT NULL);
+CREATE TABLE IF NOT EXISTS ingest_state (id TEXT PRIMARY KEY,state TEXT NOT NULL,updated_at TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS transactions (id TEXT PRIMARY KEY,date TEXT,area TEXT,project TEXT,property_type TEXT,registration TEXT,bedrooms TEXT,size_sqm REAL,price_aed REAL,price_sqm REAL,payload TEXT NOT NULL);
+CREATE INDEX IF NOT EXISTS tx_area ON transactions(area);
+CREATE INDEX IF NOT EXISTS tx_project ON transactions(project);
+CREATE INDEX IF NOT EXISTS tx_date ON transactions(date);

@@ -1,0 +1,65 @@
+{
+  "id": "hf_sales",
+  "publisher": "Dubai Real Estate Data (independent publisher)",
+  "upstreamPublisher": "Dubai Land Department",
+  "attribution": "Dubai Real Estate Data (dubairealestatedata.com), based on Dubai Land Department open data.",
+  "licenseDeclaredByPublisher": "CC BY 4.0",
+  "dataThrough": "2026-11-02",
+  "expectedRows": 1382848,
+  "primaryKey": "transaction_id",
+  "csvUrl": "https://huggingface.co/datasets/dubairealestatedata/dubai-real-estate-sales-transactions/resolve/main/dld_sales_transactions.csv?download=true",
+  "parquetUrl": "https://huggingface.co/datasets/dubairealestatedata/dubai-real-estate-sales-transactions/resolve/main/dld_sales_transactions.parquet?download=true",
+  "dictionaryUrl": "https://huggingface.co/datasets/dubairealestatedata/dubai-real-estate-sales-transactions/raw/main/DATA_DICTIONARY.md",
+  "columns": [
+    "transaction_id",
+    "instance_date",
+    "reg_type_label",
+    "area_id",
+    "area_name_en",
+    "project_name",
+    "master_project_name",
+    "building_name",
+    "property_type_label",
+    "property_sub_type",
+    "usage_label",
+    "rooms_bucket",
+    "has_parking",
+    "area_sqm",
+    "price_aed",
+    "price_psf",
+    "procedure_id",
+    "procedure_name_en",
+    "is_pre_registration",
+    "quality_flags"
+  ],
+  "registrationTypes": [
+    "Ready",
+    "Off-Plan"
+  ],
+  "propertyTypes": [
+    "Land",
+    "Building",
+    "Unit",
+    "Villa"
+  ],
+  "usageTypes": [
+    "Residential",
+    "Commercial",
+    "Other"
+  ],
+  "qualityBits": {
+    "1": "PRICE_FLOOR",
+    "2": "AREA_RANGE",
+    "4": "PSF_OUTLIER",
+    "8": "MISSING_CORE",
+    "16": "BAD_DATE"
+  },
+  "residentialPsfPopulation": "quality_flags = 0 AND property_type_label IN ('Unit','Villa') AND usage_label = 'Residential'",
+  "countValuePopulation": "All registered sales; do not apply the residential price-per-sqft subset to total volume/value.",
+  "status": "catalogued",
+  "notes": [
+    "ExpectedRows is the publisher's snapshot count, not a count of records currently ingested by SWK.",
+    "Cadastral names are not interchangeable with marketing communities.",
+    "No owner, buyer, seller or tenant identity columns are present in the documented schema."
+  ]
+}

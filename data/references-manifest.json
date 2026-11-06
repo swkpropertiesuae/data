@@ -1,0 +1,60 @@
+{
+  "retrievedAt": "2026-11-06T18:59:09.441581+00:00",
+  "sources": [
+    {
+      "id": "datadubai_service_charges",
+      "file": "data/references/datadubai_service_charges.json",
+      "status": "downloaded_not_indexed",
+      "publisher": "Dubai Data / Continental Club Property",
+      "sourceUrl": "https://datadubai.ae/service-charges.json",
+      "retrievedAt": "2026-11-06T18:59:09.441581+00:00",
+      "dataThrough": null,
+      "budgetYear": 2026,
+      "records": 46,
+      "fields": [
+        "entity",
+        "year",
+        "unit",
+        "city_median",
+        "communities"
+      ],
+      "bytes": 6415,
+      "sha256": "afcfd31085ffb3e3727e5149240cf4aae4ad2909893c73d44d83258be895f365",
+      "license": "Publisher Sources page welcomes reuse of figures with attribution; retain source link.",
+      "attribution": "Dubai Data (datadubai.ae), Continental Club Property, based on Dubai Land Department open data.",
+      "notes": [
+        "Downloaded complete public JSON through web retrieval; JSON formatting normalized.",
+        "Not included in the 12-dataset seed count and not marked loaded until application indexing.",
+        "Unknown cutoff stays null; year is a budget period, not a refresh timestamp."
+      ]
+    },
+    {
+      "id": "datadubai_stock",
+      "file": "data/references/datadubai_stock.json",
+      "status": "downloaded_not_indexed",
+      "publisher": "Dubai Data / Continental Club Property",
+      "sourceUrl": "https://datadubai.ae/stock.json",
+      "retrievedAt": "2026-11-06T18:59:09.441581+00:00",
+      "dataThrough": "2026-10-29",
+      "budgetYear": null,
+      "records": 5,
+      "fields": [
+        "entity",
+        "through",
+        "projects",
+        "units_total",
+        "units_under_construction",
+        "bands"
+      ],
+      "bytes": 499,
+      "sha256": "3f7f403c56028d2fcaee0f617733e0bc73701207faa8f946c46abe517f766202",
+      "license": "Publisher Sources page welcomes reuse of figures with attribution; retain source link.",
+      "attribution": "Dubai Data (datadubai.ae), Continental Club Property, based on Dubai Land Department open data.",
+      "notes": [
+        "Downloaded complete public JSON through web retrieval; JSON formatting normalized.",
+        "Not included in the 12-dataset seed count and not marked loaded until application indexing.",
+        "Unknown cutoff stays null; year is a budget period, not a refresh timestamp."
+      ]
+    }
+  ]
+}

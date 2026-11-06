@@ -1,0 +1,112 @@
+name,slug,url,n,quality,price_median,psf_median,psf_yoy,price_yoy,n_yoy,offplan_share,yield_pct,rent_median,n_rents,yield_segments,yield_n_rents,yield_n_sales,top_area,share_in_top_area
+Jumeirah Village Circle,jumeirah-village-circle,https://datadubai.ae/communities/jumeirah-village-circle/,12555,ok,1050000.0,1491.44,4.3,5.0,-33.1,61.3,6.24,67000.0,29876,6,29157,4444,Al Barsha South Fourth,1.0
+Dubai World Central,dubai-world-central,https://datadubai.ae/communities/dubai-world-central/,12413,ok,864000.0,1697.11,2.1,-52.1,48.9,95.6,4.81,100000.0,2770,4,2420,260,Madinat Al Mataar,1.0
+Business Bay,business-bay,https://datadubai.ae/communities/business-bay/,7134,ok,2000000.0,2366.61,-0.8,36.3,-38.7,51.9,5.73,89250.0,15023,5,14880,2277,Business Bay,0.97
+Dubai Land Residence Complex,dubai-land-residence-complex,https://datadubai.ae/communities/dubai-land-residence-complex/,7129,ok,817771.0,1416.85,9.0,8.4,-5.4,90.4,7.85,52000.0,7457,3,7269,625,Wadi Al Safa 5,1.0
+Majan,majan,https://datadubai.ae/communities/majan/,6358,ok,726992.0,1479.91,8.7,-27.2,116.8,85.5,7.25,59000.0,2975,3,2806,873,Wadi Al Safa 3,1.0
+Palm Deira,palm-deira,https://datadubai.ae/communities/palm-deira/,5051,ok,2865333.0,2748.03,18.9,10.3,43.5,97.6,,145000.0,6,0,0,0,Palm Deira,1.0
+Jumeirah Village Triangle,jumeirah-village-triangle,https://datadubai.ae/communities/jumeirah-village-triangle/,4585,ok,1160292.0,1670.14,14.0,16.0,13.0,85.0,7.22,71130.0,3197,3,2565,440,Al Barsha South Fifth,1.0
+Motor City,motor-city,https://datadubai.ae/communities/motor-city/,4086,ok,1154960.0,1757.54,-7.3,-2.9,-30.7,78.9,7.83,80000.0,1975,4,1830,787,Al Hebiah First,1.0
+Dubai Creek Harbour,dubai-creek-harbour,https://datadubai.ae/communities/dubai-creek-harbour/,4005,ok,2623808.0,2563.86,6.3,2.9,11.0,67.3,5.65,130000.0,5977,3,5939,1296,Al Khairan First,1.0
+Arjan,arjan,https://datadubai.ae/communities/arjan/,3961,ok,930000.0,1560.5,13.9,-2.1,9.6,63.7,7.07,62500.0,11578,4,11421,1320,Al Barshaa South Third,1.0
+Dubai Sports City,dubai-sports-city,https://datadubai.ae/communities/dubai-sports-city/,3394,ok,955000.0,1308.73,16.4,16.9,6.0,62.3,7.71,52000.0,8693,4,8271,1149,Al Hebiah Fourth,1.0
+International Media Production Zone,international-media-production-zone,https://datadubai.ae/communities/international-media-production-zone/,3309,ok,940000.0,1343.07,1.0,29.3,-35.1,73.7,8.55,48000.0,6731,3,6169,794,Me'Aisem First,1.0
+Down Town Jabal Ali,down-town-jabal-ali,https://datadubai.ae/communities/down-town-jabal-ali/,3306,ok,747112.0,1659.51,26.6,-22.3,278.7,95.0,8.8,51000.0,949,2,820,135,Jabal Ali Industrial Second,1.0
+Dubai South Residential District,dubai-south-residential-district,https://datadubai.ae/communities/dubai-south-residential-district/,3277,ok,1197828.0,1359.6,20.5,17.4,84.9,69.0,6.25,55000.0,4466,7,4355,954,Madinat Al Mataar,1.0
+Dubai Maritime City,dubai-maritime-city,https://datadubai.ae/communities/dubai-maritime-city/,3181,ok,2489560.0,3186.07,10.0,-2.1,-1.4,98.8,,100000.0,140,0,0,0,Madinat Dubai Almelaheyah,1.0
+Dubai Science Park,dubai-science-park,https://datadubai.ae/communities/dubai-science-park/,2925,ok,1068748.0,1739.45,7.0,-2.8,-36.0,93.4,6.8,70000.0,1380,3,1257,176,Al Barshaa South Second,1.0
+DownTown Dubai,downtown-dubai,https://datadubai.ae/communities/downtown-dubai/,2907,ok,2900000.0,3029.79,11.1,0.0,-24.4,35.7,5.25,140000.0,9208,4,9101,1697,Burj Khalifa,0.99
+City Of Arabia,city-of-arabia,https://datadubai.ae/communities/city-of-arabia/,2848,ok,615000.0,1693.14,11.8,-20.1,603.2,98.0,,67500.0,36,0,0,0,Wadi Al Safa 4,1.0
+Al Furjan,al-furjan,https://datadubai.ae/communities/al-furjan/,2635,ok,1410000.0,1400.38,6.2,0.3,-35.7,49.4,6.33,80000.0,6735,6,6450,1018,Jabal Ali First,1.0
+DAMAC Lagoons,damac-lagoons,https://datadubai.ae/communities/damac-lagoons/,2457,ok,1263360.0,1831.15,,-56.4,187.0,70.7,,150000.0,608,0,0,0,Al Hebiah Fifth,1.0
+Dubai Hills Estate,dubai-hills-estate,https://datadubai.ae/communities/dubai-hills-estate/,2411,ok,2165885.0,2400.04,-0.2,5.1,-48.4,59.4,6.03,115000.0,4823,4,4815,915,Hadaeq Sheikh Mohammed Bin Rashid,1.0
+Dubai Marina,dubai-marina,https://datadubai.ae/communities/dubai-marina/,2398,ok,2020000.0,1979.64,-8.4,2.0,-53.5,8.3,5.66,110000.0,13961,5,13897,1799,Marsa Dubai,1.0
+Silicon Oasis,silicon-oasis,https://datadubai.ae/communities/silicon-oasis/,2292,ok,997750.0,1220.0,-11.2,14.8,-42.0,43.6,7.38,56000.0,16352,4,15266,1126,Nadd Hessa,0.96
+Dubai Investment Park First,dubai-investment-park-first,https://datadubai.ae/communities/dubai-investment-park-first/,2149,ok,1169380.0,1208.61,20.3,-11.2,339.5,86.3,4.08,63000.0,3624,4,2699,94,Dubai Investment Park First,1.0
+TOWN SQUARE,town-square,https://datadubai.ae/communities/town-square/,2119,ok,1425888.0,1512.56,11.6,7.2,-20.6,53.1,6.25,89000.0,6166,6,6156,991,Al Yelayiss 2,1.0
+Wasl Gate,wasl-gate,https://datadubai.ae/communities/wasl-gate/,2032,ok,1372000.0,1543.84,16.2,7.1,50.0,96.3,7.17,77553.5,472,1,231,34,Jabal Ali First,1.0
+Meydan Racecourse Community,meydan-racecourse-community,https://datadubai.ae/communities/meydan-racecourse-community/,2026,ok,1416000.0,3511.55,118.6,-30.8,355.3,89.7,5.76,97000.0,1792,2,1685,163,Nad Al Shiba First,1.0
+DAMAC HILLS,damac-hills,https://datadubai.ae/communities/damac-hills/,1933,ok,1305500.0,1699.8,27.3,-6.8,19.0,52.4,6.86,70000.0,4232,4,3031,494,Al Hebiah Third,1.0
+DMCC-EZ2,dmcc-ez2,https://datadubai.ae/communities/dmcc-ez2/,1929,ok,2133004.5,2985.0,4.9,11.1,213.7,99.7,,26000.0,65,0,0,0,Jabal Ali First,1.0
+International City Phase 1,international-city-phase-1,https://datadubai.ae/communities/international-city-phase-1/,1843,ok,484159.0,681.76,10.1,15.8,-15.7,21.6,8.21,36500.0,22684,4,21922,1177,Al Warsan First,1.0
+Dubai Studio City,dubai-studio-city,https://datadubai.ae/communities/dubai-studio-city/,1740,ok,717600.0,1465.41,2.9,-23.1,14.3,69.5,8.11,60000.0,2028,3,1925,499,Al Hebiah Second,1.0
+International City Phase 3,international-city-phase-3,https://datadubai.ae/communities/international-city-phase-3/,1564,ok,824793.0,1128.51,12.9,21.1,-3.0,70.3,7.26,45000.0,9326,3,9125,338,Warsan Fourth,1.0
+Jumeirah Garden City,jumeirah-garden-city,https://datadubai.ae/communities/jumeirah-garden-city/,1540,ok,1415750.5,2294.53,14.3,11.9,35.7,92.9,4.79,78289.0,3540,2,3221,87,Al Satwa,1.0
+DMCC Master Community,dmcc-master-community,https://datadubai.ae/communities/dmcc-master-community/,1501,ok,1627500.0,1619.2,,,150000.0,31.1,6.71,85000.0,5823,4,5653,533,Al Thanyah Fifth,1.0
+DAMAC HILLS 2,damac-hills-2,https://datadubai.ae/communities/damac-hills-2/,1489,ok,1550000.0,1142.25,-5.8,-16.2,-66.1,4.3,7.27,90000.0,5431,3,478,116,Madinat Hind 4,1.0
+Jumeirah Islands,jumeirah-islands,https://datadubai.ae/communities/jumeirah-islands/,1393,ok,2232828.0,2477.8,13.3,8.5,3.7,90.2,,225000.0,344,0,0,0,Al Thanyah Fifth,1.0
+Meydan One Community,meydan-one-community,https://datadubai.ae/communities/meydan-one-community/,1362,ok,976200.0,2068.39,2.0,10.1,-39.7,28.0,6.44,55000.0,6369,3,6189,894,Al Merkadh,1.0
+Palm Jumeirah,palm-jumeirah,https://datadubai.ae/communities/palm-jumeirah/,1323,ok,4700000.0,2596.29,0.1,17.5,-21.0,31.4,5.24,200000.0,4126,4,3702,633,Palm Jumeirah,1.0
+SOBHA HARTLAND,sobha-hartland,https://datadubai.ae/communities/sobha-hartland/,1289,ok,1820000.0,2037.29,0.0,8.3,-5.2,20.5,5.96,100000.0,4493,5,4436,908,Al Merkadh,1.0
+Discovery Gardens,discovery-gardens,https://datadubai.ae/communities/discovery-gardens/,1205,ok,760000.0,999.06,2.3,2.9,-20.2,15.9,7.67,50693.0,13987,3,13511,997,Jabal Ali First,0.86
+Dubai Health Care City Phase 2,dubai-health-care-city-phase-2,https://datadubai.ae/communities/dubai-health-care-city-phase-2/,1188,ok,1331633.5,2038.94,14.1,11.0,-19.7,62.5,6.27,72000.0,2067,4,2046,431,Al Jadaf,1.0
+Liwan1,liwan1,https://datadubai.ae/communities/liwan1/,1075,ok,889600.0,1205.82,15.4,7.9,-7.2,55.3,7.58,54000.0,3327,4,3180,465,Wadi Al Safa 2,1.0
+Jumeirah Lakes Towers,jumeirah-lakes-towers,https://datadubai.ae/communities/jumeirah-lakes-towers/,849,ok,1812538.5,1706.58,-12.3,8.2,-76.6,23.0,6.69,88000.0,2345,4,2322,324,Al Thanyah Fifth,1.0
+Dubai Harbour,dubai-harbour,https://datadubai.ae/communities/dubai-harbour/,833,ok,4800000.0,3699.75,-7.5,-16.3,-53.7,63.7,5.07,170000.0,1437,3,1424,288,Marsa Dubai,1.0
+Sama Al Jadaf,sama-al-jadaf,https://datadubai.ae/communities/sama-al-jadaf/,820,ok,1318500.0,2184.87,,-94.4,2002.6,96.3,,100000.0,118,0,0,0,Al Jadaf,1.0
+City Walk,city-walk,https://datadubai.ae/communities/city-walk/,814,ok,3500000.0,3205.34,5.9,5.9,-15.4,68.3,5.2,205879.0,1027,3,1003,235,Al Wasl,1.0
+Sufouh Gardens,sufouh-gardens,https://datadubai.ae/communities/sufouh-gardens/,754,ok,2351000.0,2428.8,36.8,10.3,294.8,91.2,5.46,90000.0,439,2,311,44,Al Safouh First,1.0
+Jaddaf Waterfront,jaddaf-waterfront,https://datadubai.ae/communities/jaddaf-waterfront/,743,ok,1674636.0,1886.91,10.2,30.2,-34.4,83.6,5.16,85000.0,1388,4,1367,115,Al Jadaf,1.0
+Palm Jabal Ali,palm-jabal-ali,https://datadubai.ae/communities/palm-jabal-ali/,719,ok,7735000.0,3508.21,,-64.0,13.9,57.0,,,0,0,0,0,Palm Jabal Ali,1.0
+Mohammed Bin Rashid AL Maktoum District 11,mohammed-bin-rashid-al-maktoum-district-11,https://datadubai.ae/communities/mohammed-bin-rashid-al-maktoum-district-11/,649,ok,3225000.0,1859.4,9.4,26.5,-21.3,69.5,4.68,170000.0,377,1,295,127,Wadi Al Safa 3,1.0
+EXPO CITY,expo-city,https://datadubai.ae/communities/expo-city/,644,ok,1750444.0,2180.89,,,,100.0,,84000.0,1237,0,0,0,Madinat Al Mataar,1.0
+Dubai Water Canal,dubai-water-canal,https://datadubai.ae/communities/dubai-water-canal/,635,ok,2611195.0,3081.45,1.8,-24.9,-35.7,81.1,5.07,210000.0,322,2,282,80,Al Wasl,0.95
+Mudon,mudon,https://datadubai.ae/communities/mudon/,599,ok,3650000.0,1700.67,19.2,16.6,21.7,24.2,5.25,190000.0,1277,2,1149,299,Al Hebiah Sixth,1.0
+Living Legends,living-legends,https://datadubai.ae/communities/living-legends/,592,ok,1172500.0,1203.27,26.3,-80.0,-10.4,63.7,7.73,94500.0,456,4,327,112,Wadi Al Safa 3,1.0
+Business Park,business-park,https://datadubai.ae/communities/business-park/,568,ok,2962000.0,3142.98,19.2,7.2,104.3,99.5,,,0,0,0,0,Zaabeel Second,1.0
+Mina Rashid,mina-rashid,https://datadubai.ae/communities/mina-rashid/,562,ok,2400000.0,2803.85,4.5,-10.0,-54.9,95.2,4.31,100000.0,94,1,55,18,Madinat Dubai Almelaheyah,1.0
+The Valley,the-valley,https://datadubai.ae/communities/the-valley/,536,ok,3300000.0,1371.0,,,,41.8,4.92,140000.0,739,2,737,254,Al Yufrah 1,1.0
+The Greens,the-greens,https://datadubai.ae/communities/the-greens/,504,ok,1900000.0,1849.68,8.1,8.4,-26.3,6.5,6.06,110000.0,3542,4,3532,443,Al Thanyah Third,1.0
+Jumeriah Beach Residence - JBR,jumeriah-beach-residence-jbr,https://datadubai.ae/communities/jumeriah-beach-residence-jbr/,472,ok,2512500.0,1614.15,-0.9,-2.5,-28.7,0.0,5.62,135000.0,3028,4,2895,425,Marsa Dubai,1.0
+Falcon City,falcon-city,https://datadubai.ae/communities/falcon-city/,467,ok,1450000.0,1603.66,1.1,1.4,-9.7,94.4,,210000.0,135,0,0,0,Wadi Al Safa 2,1.0
+Site A,site-a,https://datadubai.ae/communities/site-a/,444,ok,2256587.0,1631.28,-46.6,-38.9,80.5,27.9,3.94,151593.75,609,1,98,30,Al Safouh Second,1.0
+Arabian Ranches 3,arabian-ranches-3,https://datadubai.ae/communities/arabian-ranches-3/,421,ok,3700000.0,1799.1,1.6,3.5,389.5,28.3,5.17,175000.0,1669,3,1668,223,Wadi Al Safa 5,1.0
+Jumeirah Golf Estates,jumeirah-golf-estates,https://datadubai.ae/communities/jumeirah-golf-estates/,394,ok,6654029.0,1536.74,3.1,4.6,-30.3,5.8,7.1,219996.0,743,3,428,118,Me'Aisem First,1.0
+WARSAN FIRST DEVELOPMENT,warsan-first-development,https://datadubai.ae/communities/warsan-first-development/,390,ok,568555.0,1348.99,16.9,-24.2,193.2,82.8,7.12,50000.0,1148,2,919,52,Al Warsan First,1.0
+TILAL AL GHAF,tilal-al-ghaf,https://datadubai.ae/communities/tilal-al-ghaf/,384,ok,7200000.0,2441.34,8.6,-10.0,-20.8,6.2,5.62,250000.0,1272,2,1134,179,Al Hebiah Fourth,1.0
+Barsha Heights,barsha-heights,https://datadubai.ae/communities/barsha-heights/,344,ok,1755000.0,1500.0,-10.1,9.3,-34.8,5.5,6.17,78000.0,5321,3,5006,119,Al Thanyah First,1.0
+Wasl 1,wasl-1,https://datadubai.ae/communities/wasl-1/,332,ok,2716777.0,2200.14,3.8,7.7,-68.0,68.1,5.24,140000.0,629,3,622,106,Al Kifaf,1.0
+Jumeirah Golf Estates - Phase B,jumeirah-golf-estates-phase-b,https://datadubai.ae/communities/jumeirah-golf-estates-phase-b/,329,ok,12886000.0,,,,32800.0,0.0,,,0,0,0,0,Me'Aisem First,1.0
+Jabal Ali Village,jabal-ali-village,https://datadubai.ae/communities/jabal-ali-village/,319,ok,641474.0,,,-86.9,490.7,0.0,,223000.0,96,0,0,0,Jabal Ali First,1.0
+Emirates Living,emirates-living,https://datadubai.ae/communities/emirates-living/,311,ok,4999999.0,1666.59,,,,0.0,4.09,210000.0,1765,2,1432,230,Al Thanayah Fourth,1.0
+Al Barari,al-barari,https://datadubai.ae/communities/al-barari/,307,ok,5065120.0,2555.53,,-77.5,420.3,40.1,8.83,433855.17,260,3,186,112,Wadi Al Safa 3,1.0
+LA MER,la-mer,https://datadubai.ae/communities/la-mer/,291,ok,2540000.0,2909.16,-0.1,-19.4,-0.7,48.8,5.19,165000.0,707,2,613,113,Jumeirah First,1.0
+Remraam,remraam,https://datadubai.ae/communities/remraam/,286,ok,800000.0,944.74,8.3,5.4,-49.3,0.0,7.57,60000.0,2126,4,2121,285,Al Hebiah Fifth,1.0
+Arabian Ranches - 1,arabian-ranches-1,https://datadubai.ae/communities/arabian-ranches-1/,282,ok,6997500.0,1427.16,-8.1,21.2,333.8,0.0,4.5,250000.0,1222,2,871,138,Wadi Al Safa 6,1.0
+Dubai Investment Park Second,dubai-investment-park-second,https://datadubai.ae/communities/dubai-investment-park-second/,279,ok,600000.0,750.9,17.4,-30.2,-5.4,0.0,8.6,42350.0,2449,3,2270,207,Dubai Investment Park Second,1.0
+Rukan,rukan,https://datadubai.ae/communities/rukan/,270,ok,984701.0,1410.54,30.1,20.7,-59.7,0.0,7.14,70000.0,1032,5,965,241,Wadi Al Safa 7,1.0
+Nad Al Sheba Gardens,nad-al-sheba-gardens,https://datadubai.ae/communities/nad-al-sheba-gardens/,268,ok,5400000.0,1915.72,11.7,-9.6,1.1,54.5,,145000.0,377,0,0,0,Nad Al Shiba First,1.0
+Mohammed Bin Rashid AL Maktoum City -District -1 Community,mohammed-bin-rashid-al-maktoum-city-district-1-community,https://datadubai.ae/communities/mohammed-bin-rashid-al-maktoum-city-district-1-community/,214,ok,2169000.0,1996.79,-9.8,-13.2,-27.7,7.5,6.44,110000.0,914,3,791,150,Al Merkadh,1.0
+JABEL ALI HILLS,jabel-ali-hills,https://datadubai.ae/communities/jabel-ali-hills/,213,ok,3887600.0,,,27.0,-54.2,0.0,,54883.0,255,0,0,0,Saih Shuaib 1,1.0
+Jumeirah Park,jumeirah-park,https://datadubai.ae/communities/jumeirah-park/,146,ok,9000000.0,,,13.7,-31.1,0.0,,335000.0,849,0,0,0,Al Thanyah Fifth,1.0
+International City Phase 2,international-city-phase-2,https://datadubai.ae/communities/international-city-phase-2/,142,ok,919111.0,,,,,0.0,,,0,0,0,0,Warsan Fourth,1.0
+HADAEQ SHEIKH MOHAMMED BIN RASHID - DISRICT 7,hadaeq-sheikh-mohammed-bin-rashid-disrict-7,https://datadubai.ae/communities/hadaeq-sheikh-mohammed-bin-rashid-disrict-7/,127,ok,1400000.0,1867.67,-19.7,-63.6,-80.2,8.7,5.76,80500.0,920,4,889,97,Hadaeq Sheikh Mohammed Bin Rashid,1.0
+Dubai Industrial City,dubai-industrial-city,https://datadubai.ae/communities/dubai-industrial-city/,126,ok,4555221.5,,,-68.8,75.0,0.0,,34380.0,81,0,0,0,Saih Shuaib 4,0.52
+Dubai International Financial Center,dubai-international-financial-center,https://datadubai.ae/communities/dubai-international-financial-center/,122,ok,6150000.0,3813.87,-13.0,-5.1,93.7,100.0,,,0,0,0,0,Zaabeel Second,1.0
+The Villa,the-villa,https://datadubai.ae/communities/the-villa/,97,ok,7250000.0,,,0.3,-48.9,0.0,,300000.0,315,0,0,0,Wadi Al Safa 5,1.0
+Bluewaters Island,bluewaters-island,https://datadubai.ae/communities/bluewaters-island/,94,ok,5812500.0,3826.98,1.0,-18.1,2.2,0.0,5.09,420000.0,200,1,57,17,Marsa Dubai,1.0
+800 Villas,800-villas,https://datadubai.ae/communities/800-villas/,76,ok,3025000.0,1287.73,7.5,10.0,-44.5,0.0,5.1,150000.0,543,2,538,76,Wadi Al Safa 7,1.0
+Arabian Ranches II,arabian-ranches-ii,https://datadubai.ae/communities/arabian-ranches-ii/,69,ok,6100000.0,1738.61,,,,0.0,,245000.0,655,0,0,0,Wadi Al Safa 7,1.0
+Garden View,garden-view,https://datadubai.ae/communities/garden-view/,55,ok,645535.0,,,,,0.0,,173065.0,306,0,0,0,Jabal Ali First,1.0
+Al Khawaneej Labour City,al-khawaneej-labour-city,https://datadubai.ae/communities/al-khawaneej-labour-city/,51,ok,5009978.0,,,,1175.0,0.0,,,0,0,0,0,Al Ttay,1.0
+JABAL ALI INDUSTRIAL DEVELOPMENT,jabal-ali-industrial-development,https://datadubai.ae/communities/jabal-ali-industrial-development/,50,ok,10000000.0,,,25.0,138.1,0.0,,30000.0,176,0,0,0,Jabal Ali Industrial First,1.0
+Madinat Badr,madinat-badr,https://datadubai.ae/communities/madinat-badr/,49,ok,1900000.0,1377.49,6.0,10.1,-5.8,0.0,6.01,100000.0,333,2,303,43,Muhaisanah First,1.0
+DUBAI HILLS - MAPLE 1,dubai-hills-maple-1,https://datadubai.ae/communities/dubai-hills-maple-1/,39,ok,5300000.0,2181.38,12.5,5.5,-30.4,0.0,5.09,270000.0,353,1,178,15,Hadaeq Sheikh Mohammed Bin Rashid,1.0
+THE SUSTAINABLE CITY,the-sustainable-city,https://datadubai.ae/communities/the-sustainable-city/,39,ok,4875000.0,2140.52,3.4,1.6,-30.4,0.0,5.4,219658.0,245,1,63,17,Wadi Al Safa 7,1.0
+Springs - 2,springs-2,https://datadubai.ae/communities/springs-2/,39,ok,3975000.0,1730.16,16.0,-7.6,-56.7,0.0,4.55,185950.0,104,1,51,25,Al Thanayah Fourth,1.0
+Festival City,festival-city,https://datadubai.ae/communities/festival-city/,37,ok,3100000.0,1426.96,-10.7,1.0,-65.4,0.0,6.03,160000.0,549,1,240,21,Al Kheeran,1.0
+DUBAI HILLS - MAPLE 3,dubai-hills-maple-3,https://datadubai.ae/communities/dubai-hills-maple-3/,34,ok,5525000.0,2028.49,10.7,0.0,-17.1,0.0,4.74,260000.0,282,1,161,20,Hadaeq Sheikh Mohammed Bin Rashid,1.0
+The World,the-world,https://datadubai.ae/communities/the-world/,33,ok,2200000.0,2403.69,14.3,10.0,-76.3,90.9,,,0,0,0,0,World Islands,1.0
+Springs - 1,springs-1,https://datadubai.ae/communities/springs-1/,33,ok,4950000.0,1639.4,10.7,14.5,-77.1,0.0,4.2,200000.0,128,1,71,19,Al Thanayah Fourth,1.0
+DUBAI HILLS,dubai-hills,https://datadubai.ae/communities/dubai-hills/,31,ok,23500000.0,,,44.9,-46.6,0.0,,1150000.0,32,0,0,0,Hadaeq Sheikh Mohammed Bin Rashid,1.0
+DUBAI HILLS - MAPLE 2,dubai-hills-maple-2,https://datadubai.ae/communities/dubai-hills-maple-2/,30,ok,5250000.0,2013.68,7.0,2.9,-43.4,0.0,4.91,260000.0,323,1,158,18,Hadaeq Sheikh Mohammed Bin Rashid,1.0
+Uptown Mirdif,uptown-mirdif,https://datadubai.ae/communities/uptown-mirdif/,29,ok,1100000.0,861.32,-0.0,20.2,-56.1,0.0,,80000.0,292,0,0,0,Mirdif,1.0
+Liwan2,liwan2,https://datadubai.ae/communities/liwan2/,28,ok,1335000.0,1094.35,-0.1,-33.2,55.6,28.6,,55000.0,1321,0,0,0,Wadi Al Safa 2,1.0
+DUBAI HILLS - SIDRA 1,dubai-hills-sidra-1,https://datadubai.ae/communities/dubai-hills-sidra-1/,28,ok,9425000.0,,,-14.3,-39.1,0.0,,450000.0,165,0,0,0,Hadaeq Sheikh Mohammed Bin Rashid,1.0
+DMCC-EZ1,dmcc-ez1,https://datadubai.ae/communities/dmcc-ez1/,27,ok,3517053.0,2737.42,5.3,7.1,-93.6,74.1,,153500.0,60,0,0,0,Al Thanyah Fifth,1.0
+DUBAI HILLS - SIDRA 2,dubai-hills-sidra-2,https://datadubai.ae/communities/dubai-hills-sidra-2/,27,ok,11070000.0,,,8.5,-6.9,0.0,,415000.0,151,0,0,0,Hadaeq Sheikh Mohammed Bin Rashid,1.0
+DUBAI HILLS - SIDRA 3,dubai-hills-sidra-3,https://datadubai.ae/communities/dubai-hills-sidra-3/,24,ok,10300000.0,,,8.4,-36.8,0.0,,425000.0,120,0,0,0,Hadaeq Sheikh Mohammed Bin Rashid,1.0
+Springs - 3,springs-3,https://datadubai.ae/communities/springs-3/,22,ok,4090000.0,1674.75,11.7,2.8,-60.7,0.0,,181252.5,82,0,0,0,Al Thanayah Fourth,1.0
+Nad Al Shiba Villas,nad-al-shiba-villas,https://datadubai.ae/communities/nad-al-shiba-villas/,22,ok,4950000.0,,,11.2,-48.8,0.0,,,0,0,0,0,Nad Al Shiba Third,1.0
+Jumeira Bay,jumeira-bay,https://datadubai.ae/communities/jumeira-bay/,21,ok,,,,,-48.8,9.5,,997383.0,63,0,0,0,Island 2,1.0
+Badra,badra,https://datadubai.ae/communities/badra/,21,ok,810000.0,746.7,9.3,24.6,-40.0,0.0,,52000.0,455,0,0,0,Hessyan First,1.0

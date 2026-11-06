@@ -1,0 +1,284 @@
+{
+  "entity": "Service charges",
+  "year": 2026,
+  "unit": "AED per sqft per year, residential, general + reserve fund",
+  "city_median": 15.84,
+  "communities": [
+    {
+      "name": "Burj Khalifa District",
+      "url": null,
+      "buildings": 25,
+      "median_aed_sqft": "28.7"
+    },
+    {
+      "name": "Dubai Creek Harbour",
+      "url": "/communities/dubai-creek-harbour/",
+      "buildings": 19,
+      "median_aed_sqft": "21.1"
+    },
+    {
+      "name": "Al Barari",
+      "url": "/communities/al-barari/",
+      "buildings": 14,
+      "median_aed_sqft": "20.5"
+    },
+    {
+      "name": "Jumeriah Beach Residence - JBR",
+      "url": "/communities/jumeriah-beach-residence-jbr/",
+      "buildings": 5,
+      "median_aed_sqft": "20.1"
+    },
+    {
+      "name": "Business Bay",
+      "url": "/communities/business-bay/",
+      "buildings": 84,
+      "median_aed_sqft": "20.0"
+    },
+    {
+      "name": "Meydan",
+      "url": null,
+      "buildings": 98,
+      "median_aed_sqft": "19.1"
+    },
+    {
+      "name": "DownTown Dubai",
+      "url": "/communities/downtown-dubai/",
+      "buildings": 24,
+      "median_aed_sqft": "19.0"
+    },
+    {
+      "name": "Dubai Production City",
+      "url": null,
+      "buildings": 30,
+      "median_aed_sqft": "18.8"
+    },
+    {
+      "name": "Dubai Studio City",
+      "url": "/communities/dubai-studio-city/",
+      "buildings": 10,
+      "median_aed_sqft": "18.7"
+    },
+    {
+      "name": "Jumeirah Village Triangle",
+      "url": "/communities/jumeirah-village-triangle/",
+      "buildings": 11,
+      "median_aed_sqft": "18.6"
+    },
+    {
+      "name": "Dubai Hills Estate",
+      "url": "/communities/dubai-hills-estate/",
+      "buildings": 26,
+      "median_aed_sqft": "18.5"
+    },
+    {
+      "name": "SOBHA HARTLAND",
+      "url": "/communities/sobha-hartland/",
+      "buildings": 8,
+      "median_aed_sqft": "18.0"
+    },
+    {
+      "name": "Dubai Health Care City Phase 1",
+      "url": null,
+      "buildings": 10,
+      "median_aed_sqft": "17.7"
+    },
+    {
+      "name": "Barsha Heights",
+      "url": "/communities/barsha-heights/",
+      "buildings": 10,
+      "median_aed_sqft": "17.3"
+    },
+    {
+      "name": "Dubai South",
+      "url": null,
+      "buildings": 37,
+      "median_aed_sqft": "17.1"
+    },
+    {
+      "name": "Dubai Science Park",
+      "url": "/communities/dubai-science-park/",
+      "buildings": 6,
+      "median_aed_sqft": "16.8"
+    },
+    {
+      "name": "Jumeirah Village Circle",
+      "url": "/communities/jumeirah-village-circle/",
+      "buildings": 182,
+      "median_aed_sqft": "16.6"
+    },
+    {
+      "name": "DMCC Master Community",
+      "url": "/communities/dmcc-master-community/",
+      "buildings": 37,
+      "median_aed_sqft": "16.4"
+    },
+    {
+      "name": "Culture Village",
+      "url": null,
+      "buildings": 7,
+      "median_aed_sqft": "16.4"
+    },
+    {
+      "name": "Dubai Marina",
+      "url": "/communities/dubai-marina/",
+      "buildings": 104,
+      "median_aed_sqft": "16.3"
+    },
+    {
+      "name": "Discovery Gardens",
+      "url": "/communities/discovery-gardens/",
+      "buildings": 20,
+      "median_aed_sqft": "16.0"
+    },
+    {
+      "name": "Palm Jumeirah",
+      "url": "/communities/palm-jumeirah/",
+      "buildings": 16,
+      "median_aed_sqft": "15.8"
+    },
+    {
+      "name": "Wasl 1",
+      "url": "/communities/wasl-1/",
+      "buildings": 5,
+      "median_aed_sqft": "15.7"
+    },
+    {
+      "name": "Motor City",
+      "url": "/communities/motor-city/",
+      "buildings": 58,
+      "median_aed_sqft": "15.7"
+    },
+    {
+      "name": "Arjan",
+      "url": "/communities/arjan/",
+      "buildings": 38,
+      "median_aed_sqft": "15.7"
+    },
+    {
+      "name": "Dubai Sports City",
+      "url": "/communities/dubai-sports-city/",
+      "buildings": 51,
+      "median_aed_sqft": "15.7"
+    },
+    {
+      "name": "TOWN SQUARE",
+      "url": "/communities/town-square/",
+      "buildings": 8,
+      "median_aed_sqft": "15.4"
+    },
+    {
+      "name": "Jumeirah Golf Estates",
+      "url": "/communities/jumeirah-golf-estates/",
+      "buildings": 8,
+      "median_aed_sqft": "15.0"
+    },
+    {
+      "name": "The Greens",
+      "url": "/communities/the-greens/",
+      "buildings": 25,
+      "median_aed_sqft": "14.9"
+    },
+    {
+      "name": "Majan",
+      "url": "/communities/majan/",
+      "buildings": 12,
+      "median_aed_sqft": "14.5"
+    },
+    {
+      "name": "Al Furjan",
+      "url": "/communities/al-furjan/",
+      "buildings": 43,
+      "median_aed_sqft": "13.9"
+    },
+    {
+      "name": "Silicon Oasis",
+      "url": "/communities/silicon-oasis/",
+      "buildings": 59,
+      "median_aed_sqft": "13.8"
+    },
+    {
+      "name": "International City Ph 2 & 3",
+      "url": null,
+      "buildings": 11,
+      "median_aed_sqft": "13.7"
+    },
+    {
+      "name": "Liwan",
+      "url": null,
+      "buildings": 46,
+      "median_aed_sqft": "12.9"
+    },
+    {
+      "name": "International City",
+      "url": null,
+      "buildings": 43,
+      "median_aed_sqft": "12.8"
+    },
+    {
+      "name": "Dubai Land",
+      "url": null,
+      "buildings": 103,
+      "median_aed_sqft": "12.4"
+    },
+    {
+      "name": "Mirdif",
+      "url": null,
+      "buildings": 5,
+      "median_aed_sqft": "12.4"
+    },
+    {
+      "name": "Dubai Investment Park",
+      "url": null,
+      "buildings": 34,
+      "median_aed_sqft": "12.1"
+    },
+    {
+      "name": "Dubai Industrial City",
+      "url": "/communities/dubai-industrial-city/",
+      "buildings": 7,
+      "median_aed_sqft": "9.6"
+    },
+    {
+      "name": "Emaar South",
+      "url": null,
+      "buildings": 5,
+      "median_aed_sqft": "6.4"
+    },
+    {
+      "name": "Nshama",
+      "url": null,
+      "buildings": 11,
+      "median_aed_sqft": "4.4"
+    },
+    {
+      "name": "Living Legends",
+      "url": "/communities/living-legends/",
+      "buildings": 5,
+      "median_aed_sqft": "4.2"
+    },
+    {
+      "name": "Damac Hills 2",
+      "url": null,
+      "buildings": 26,
+      "median_aed_sqft": "3.9"
+    },
+    {
+      "name": "Damac Hills",
+      "url": null,
+      "buildings": 48,
+      "median_aed_sqft": "3.1"
+    },
+    {
+      "name": "LA MER",
+      "url": "/communities/la-mer/",
+      "buildings": 5,
+      "median_aed_sqft": "3.1"
+    },
+    {
+      "name": "Al Qouz",
+      "url": null,
+      "buildings": 11,
+      "median_aed_sqft": "2.4"
+    }
+  ]
+}

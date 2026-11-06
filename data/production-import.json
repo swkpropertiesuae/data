@@ -1,0 +1,24 @@
+{
+  "verifiedDate": "2026-11-06",
+  "url": "https://data.swk.rent/",
+  "datasets": 24,
+  "searchableRecords": 1459928,
+  "historicalSales": 1382848,
+  "dubaiSummaryRows": 9260,
+  "ajmanRecords": 67820,
+  "historicalIndexComplete": true,
+  "catalogueSources": 83,
+  "ajmanDatasetRows": {
+    "real-estate-units-sales": 6075,
+    "real-estate-units-transactions": 6299,
+    "real-estate-units-registration": 5124,
+    "real-estate-projects": 3457,
+    "lands-sales": 1554,
+    "lands-transactions": 1646,
+    "real-estate-offices": 14322,
+    "real-estate-offices-classification": 3159,
+    "real-estate-activities-for-each-office": 26184
+  },
+  "liveCoverageEndpoint": "https://data.swk.rent/api/stats",
+  "note": "Counts are records, not unique investors, people, agencies or delivered properties. Different datasets can describe overlapping events."
+}

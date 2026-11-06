@@ -1,0 +1,10 @@
+node_modules/
+.env*
+!.env.example
+dist/
+data/raw/
+*.sqlite*
+.DS_Store
+coverage/
+__pycache__/
+src/generated.mjs

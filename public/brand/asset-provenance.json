@@ -1,0 +1,30 @@
+{
+  "origin": "Existing SWK Rent and SWK Properties Brand Packs, retrieved 2026-11-06",
+  "files": {
+    "mark.svg": {
+      "source": "SWK_Properties_Brand_Pack/Icon/SWK_Properties_Crest_ForLight.svg",
+      "bytes": 2565
+    },
+    "mark-dark.svg": {
+      "source": "SWK_Properties_Brand_Pack/Icon/SWK_Properties_Crest_ForDark.svg",
+      "bytes": 2565
+    },
+    "rent-logo.svg": {
+      "source": "SWK_Rent_Brand_Pack/Logo/SWK_Rent_Horizontal_ForLight.svg",
+      "bytes": 7948
+    },
+    "properties-logo.svg": {
+      "source": "SWK_Properties_Brand_Pack/Logo/SWK_Properties_Horizontal_ForLight.svg",
+      "bytes": 9771
+    },
+    "favicon.svg": {
+      "source": "SWK_Rent_Brand_Pack/Favicon/favicon.svg",
+      "bytes": 1282
+    },
+    "apple-touch-icon.png": {
+      "source": "SWK_Rent_Brand_Pack/Favicon/apple-touch-icon.png",
+      "bytes": 7640
+    }
+  },
+  "notes": "Exact supplied assets; no redraw or recolouring. SVG logos and mark transparent, designed for pale backgrounds. mark-dark.svg is the supplied variant for dark backgrounds. The shared family favicon is exact from Rent pack. Use mark.svg with ordinary text for the new DATA product label; no DATA wordmark was supplied."
+}

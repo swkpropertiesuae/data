@@ -1,0 +1,29 @@
+{
+  "entity": "Dubai stock",
+  "through": "2026-10-29",
+  "projects": 3871,
+  "units_total": 975005,
+  "units_under_construction": 536756,
+  "bands": [
+    {
+      "band": "0-20% complete",
+      "projects": 1400
+    },
+    {
+      "band": "20-40% complete",
+      "projects": 282
+    },
+    {
+      "band": "40-60% complete",
+      "projects": 196
+    },
+    {
+      "band": "60-80% complete",
+      "projects": 176
+    },
+    {
+      "band": "80-100% complete",
+      "projects": 1817
+    }
+  ]
+}

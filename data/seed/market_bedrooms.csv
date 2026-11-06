@@ -1,0 +1,7 @@
+entity,code,label,slug,n,quality,price_median,psf_median,sqft_median,rent_median,n_rents,yield_pct,url
+Dubai,Studio,Studios,studio,43632,ok,693999.0,1748.18,398.26,40000.0,98240,7.1,
+Dubai,1 B/R,1-bedroom apartments,1-bedroom,60564,ok,1256724.0,1642.16,777.42,58320.0,217725,5.55,
+Dubai,2 B/R,2-bedroom apartments,2-bedroom,33796,ok,2207000.0,1759.94,1246.03,77175.0,176699,3.86,
+Dubai,3 B/R,3-bedroom apartments,3-bedroom,12382,ok,3484888.0,1897.89,1835.25,132825.0,61931,4.03,
+Dubai,4 B/R,4-bedroom apartments,4-bedroom,7251,ok,3400000.0,1767.09,2306.71,207000.0,21467,5.04,
+Dubai,5 B/R,5-bedroom apartments,5-bedroom,1945,ok,4717500.0,1717.48,2574.84,280000.0,7489,4.75,

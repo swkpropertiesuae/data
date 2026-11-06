@@ -1,0 +1,10 @@
+{
+  "account_id": "2fc58155145f61a3365728a8e49582f7",
+  "worker_name": "swk-data",
+  "database_id": "47cd680d-462a-47a0-8568-0313a422ccc7",
+  "bucket_name": "swk-data-archive",
+  "hostname": "data.swk.rent",
+  "zone_id": "db71e3e6cd8b8b9a48abb8b565599a8e",
+  "compatibility_date": "2026-11-06",
+  "refresh_cron_utc": "15 3 * * *"
+}
