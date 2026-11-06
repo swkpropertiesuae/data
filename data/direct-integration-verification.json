@@ -1,0 +1,23 @@
+{
+  "verifiedDateDubai": "2026-11-07",
+  "application": "https://data.swk.rent/",
+  "workerDeployment": "3d45988fb3bb446a95b2beaee142a592",
+  "provider": "https://mcp.datadubai.ae/mcp",
+  "protocolVersion": "2025-11-25",
+  "tested": [
+    "community comparison via JSON",
+    "project detail via MCP",
+    "monthly report via MCP",
+    "yield ranking via MCP",
+    "multi-project search via MCP",
+    "connected source label",
+    "answer CSV download with provenance",
+    "repeat lookup served from cache"
+  ],
+  "automatedChecksPassed": 26,
+  "importedDatasets": 24,
+  "searchableImportedRecords": 1459928,
+  "catalogueEntries": 83,
+  "temporaryVerificationWorkerRemoved": true,
+  "screenshot": "docs/swk-data-direct.png"
+}

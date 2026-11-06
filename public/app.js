@@ -25,7 +25,7 @@ function answerOrigin(data){
 function answerNotice(data){
   if(data.provider?.freshness&&data.provider.freshness!=='imported'){
     const fetched=new Date(data.provider.fetchedAt).toLocaleString('en-AE',{timeZone:'Asia/Dubai',dateStyle:'medium',timeStyle:'short'});
-    return `${num(data.total)} published rows / matches · source data through ${esc(data.dataThrough||'publisher date unspecified')} · fetched ${esc(fetched)} Dubai time · ${esc(data.provider.transport.toUpperCase())}`;
+    return `${num(data.rows.length)} rows shown · ${num(data.total)} published matches · source data through ${esc(data.dataThrough||'publisher date unspecified')} · fetched ${esc(fetched)} Dubai time · ${esc(data.provider.transport.toUpperCase())}`;
   }
   return `${num(data.total)} matching records · data through ${esc(data.dataThrough||'publisher date')} · ${esc(data.sources?.[0]?.publisher||'Original publisher')}`;
 }

@@ -67,3 +67,10 @@ npm test
 ```
 
 Automated checks cover real imported records, direct API routing, SSE transport and chunking, session negotiation, wrong IDs, oversized responses, native Worker fetch binding, caching, budgets, JSON fallback, older source dates, stale expiry, private-data boundaries, and comparison citations. Live Cloudflare verification additionally checks the actual public MCP service and the production interface. Both fallback modes are bounded; neither downloads every underlying DLD record from MCP.
+
+
+## Production verification, 7 November 2026
+
+The deployed site was checked with direct community comparisons (JSON), project details (MCP), monthly reports (MCP), yield rankings (MCP), multi-project search (MCP), connected-source filtering, CSV download and a repeat cached entity lookup. The CSV contained all eight displayed ranking rows, original source URLs, source cutoff, fetch time and transport. All 26 automated checks passed locally and on GitHub Actions. Imported totals remained 1,459,928 records across 24 datasets, with an 83-source catalogue. The temporary verification Worker was removed after testing.
+
+![Verified direct Dubai Data answer](swk-data-direct.png)
