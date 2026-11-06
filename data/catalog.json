@@ -899,9 +899,9 @@
     "category": "api",
     "status": "catalogued",
     "url": "https://datadubai.ae/mcp/",
-    "description": "Documented public read-only MCP service for querying the same published market figures.",
-    "license": "Check publisher terms before bulk reuse",
-    "access": "Public MCP documented; runtime connection not yet enabled",
+    "description": "Public read-only MCP connected to SWK DATA for dated property statistics, entity details, rankings and monthly reports.",
+    "license": "CC BY 4.0; attribution and source link required",
+    "access": "Direct connection enabled in production; dated results cached for six hours",
     "dataThrough": null,
     "attribution": "Dubai Data / Continental Club Property",
     "tags": [

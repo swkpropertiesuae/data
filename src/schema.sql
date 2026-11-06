@@ -8,3 +8,4 @@ CREATE TABLE IF NOT EXISTS transactions (id TEXT PRIMARY KEY,date TEXT,area TEXT
 CREATE INDEX IF NOT EXISTS tx_area ON transactions(area);
 CREATE INDEX IF NOT EXISTS tx_project ON transactions(project);
 CREATE INDEX IF NOT EXISTS tx_date ON transactions(date);
+CREATE TABLE IF NOT EXISTS provider_cache (key TEXT PRIMARY KEY,payload TEXT NOT NULL,fetched_at INTEGER NOT NULL,expires_at INTEGER NOT NULL);

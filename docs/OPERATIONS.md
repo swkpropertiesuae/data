@@ -43,3 +43,14 @@ Access-approved ADREC exports/API, verified additional DLD registers, authorised
 ## Verified initial production import
 
 On 6 November 2026, database COUNT confirmed 1,382,848 historical sales and the source checkpoint reached byte 240,530,566 with complete=true. All nine official Ajman exports were acquired with declared CC BY 4.0 metadata and indexed (67,820 source rows). Combined with 9,260 Dubai summary/reference rows, production holds 1,459,928 searchable records in 24 datasets. See data/production-import.json. These counts overlap conceptually and must not be added to infer unique people, properties or events.
+
+
+## Direct Dubai Data connection
+
+Production enables `DUBAI_DATA_ENABLED=true`. The read-only provider uses MCP at `https://mcp.datadubai.ae/mcp`, with public JSON mirrors as a fallback. The deployment script creates the additive `provider_cache` table before uploading the Worker. No existing property records are rewritten by that migration. See [the integration guide](DUBAI_DATA.md).
+
+Disable the direct provider with `DUBAI_DATA_ENABLED=false` to serve imported data only. This is separate from the AI binding and its daily caps. `/api/providers` reports the last verified connection and fetch, not a continuous availability check.
+
+Cache misses are bounded to 200 direct queries globally per UTC day and 20 per visitor per UTC day. Cache hits do not spend another direct-query allowance. Each query has a 22-second upstream deadline, capped MCP calls and one MiB per response. Normal cached responses are reusable for six hours. During upstream failures an existing response may be served for up to seven days with a stale-cache notice; after that the imported snapshot is used. The daily cleanup removes old cached provider responses.
+
+Public data responses, short entity lookup parameters (inside published search responses) and a rotating daily visitor hash can be stored. Raw chat prompts, IP addresses, credentials and conversation history are not added to this cache. No new cron or unbounded crawl is introduced.

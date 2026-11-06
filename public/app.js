@@ -3,7 +3,7 @@ const icons={plus:'<path d="M12 5v14M5 12h14"/>',sparkles:'<path d="m12 3 2.5 6.
 function drawIcons(root=document){root.querySelectorAll('[data-icon]').forEach(e=>{e.innerHTML=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icons[e.dataset.icon]||icons.database}</svg>`;});}
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const urlSafe=v=>{try{const u=new URL(v,location.origin);return ['https:','http:'].includes(u.protocol)?u.href:'#';}catch{return '#';}};
-const label=k=>({n:'Sales',price_median:'Median price (AED)',psf_median:'AED / sqft',yield_pct:'Gross yield (%)',rent_median:'Annual rent (AED)',contracts:'Contracts',completion:'Completion (%)',completion_date:'Declared completion',total_units:'Units',n_projects:'Projects',value_total:'Registered value (AED)',name:'Name',community:'Community',price_aed:'Sale price (AED)',price_psf:'AED / sqft',instance_date:'Date',area_name_en:'DLD area',rooms_bucket:'Bedrooms',property_type_label:'Property type',reg_type_label:'Registration',quality_flags:'Quality flags'}[k]||k.replaceAll('_',' ').replace(/^\w/,c=>c.toUpperCase()));
+const label=k=>({psf_yoy:'AED/sqft YoY (%)',n_yoy:'Sales YoY (%)',offplan_share:'Off-plan share (%)',data_through:'Source cutoff',n_sales:'Sales',median:'Median AED/sqft',price:'Median sale price (AED)',quality:'Sample quality',median_aed_sqft:'AED/sqft/year',budget_year:'Budget year',n:'Sales',price_median:'Median price (AED)',psf_median:'AED / sqft',yield_pct:'Gross yield (%)',rent_median:'Annual rent (AED)',contracts:'Contracts',completion:'Completion (%)',completion_date:'Declared completion',total_units:'Units',n_projects:'Projects',value_total:'Registered value (AED)',name:'Name',community:'Community',price_aed:'Sale price (AED)',price_psf:'AED / sqft',instance_date:'Date',area_name_en:'DLD area',rooms_bucket:'Bedrooms',property_type_label:'Property type',reg_type_label:'Registration',quality_flags:'Quality flags'}[k]||k.replaceAll('_',' ').replace(/^\w/,c=>c.toUpperCase()));
 const num=v=>Number(v||0).toLocaleString('en-AE');
 function val(v){if(v===null||v===undefined||v==='')return '—';return /^-?\d+(\.\d+)?$/.test(String(v))?Number(v).toLocaleString('en-AE',{maximumFractionDigits:2}):String(v);}
 let sources=[],datasets=[],stats={},messages=[],page=0,recordTotal=0,view='ask',busy=false,activeConversation=null;
@@ -17,10 +17,34 @@ function startNew(){messages=[];activeConversation=null;$('#messages').innerHTML
 function inline(text){return esc(text).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/\[(\d+)\]/g,'<sup>[$1]</sup>');}
 function markdown(text){const blocks=String(text).split(/\n\s*\n/);return blocks.map(b=>{const lines=b.split('\n');if(lines.every(l=>/^\s*[-*] /.test(l)))return '<ul>'+lines.map(l=>'<li>'+inline(l.replace(/^\s*[-*] /,''))+'</li>').join('')+'</ul>';return '<p>'+lines.map(inline).join('<br>')+'</p>';}).join('');}
 function table(rows,columns){if(!rows.length)return '<div class="table-empty">No matching imported records.<br>Try another search or inspect Sources & coverage.</div>';return `<table><thead><tr>${columns.map(k=>`<th>${esc(label(k))}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${columns.map(k=>`<td title="${esc(val(r[k]))}">${esc(val(r[k]))}</td>`).join('')}</tr>`).join('')}</tbody></table>`;}
+function answerOrigin(data){
+  const p=data.provider;
+  if(!p||p.freshness==='imported')return 'Saved import · source dated';
+  return p.freshness==='stale'?'Dubai Data · older cache':p.freshness==='cached'?'Dubai Data · cached response':'Dubai Data · fetched directly';
+}
+function answerNotice(data){
+  if(data.provider?.freshness&&data.provider.freshness!=='imported'){
+    const fetched=new Date(data.provider.fetchedAt).toLocaleString('en-AE',{timeZone:'Asia/Dubai',dateStyle:'medium',timeStyle:'short'});
+    return `${num(data.total)} published rows / matches · source data through ${esc(data.dataThrough||'publisher date unspecified')} · fetched ${esc(fetched)} Dubai time · ${esc(data.provider.transport.toUpperCase())}`;
+  }
+  return `${num(data.total)} matching records · data through ${esc(data.dataThrough||'publisher date')} · ${esc(data.sources?.[0]?.publisher||'Original publisher')}`;
+}
 function renderMessages(){
   $('#welcome').hidden=true;$('#conversation').hidden=false;
-  $('#messages').innerHTML=messages.map((m,index)=>m.role==='user'?`<div class="message"><div class="question-bubble">${esc(m.content)}</div></div>`:`<article class="message"><div class="answer-head"><img src="/brand/mark.svg" alt="SWK"><strong>SWK DATA</strong><span>${m.data.mode==='ai-with-evidence'?'AI answer · source grounded':'Verified records & source guidance'}</span></div><div class="answer-body">${markdown(m.content)}</div>${m.data.rows?.length?`<div class="answer-table">${table(m.data.rows,m.data.columns)}</div><p class="answer-notice">${num(m.data.total)} matching records · data through ${esc(m.data.dataThrough||'publisher date')} · ${m.data.dataset==='transactions'?'Registered sales snapshot':'DataDubai / Continental Club Property, based on DLD open data'}</p>`:''}<div class="sources-label">${m.data.rows?.length?'Evidence & further sources':'Source references · records not imported for this answer'}</div><div class="citations">${(m.data.sources||[]).map((s,i)=>`<a class="citation" href="${esc(urlSafe(s.url))}" target="_blank" rel="noopener">${i+1}. ${esc(s.name)} ↗<small>${esc(s.publisher)} · ${esc(s.status==='loaded'?'Imported':'Reference only')}</small></a>`).join('')}</div><div class="answer-actions"><button data-copy="${index}">Copy answer</button>${m.data.rows?.length?`<button data-open-dataset="${esc(m.data.dataset)}">Explore this dataset ↗</button><a href="/api/export?dataset=${encodeURIComponent(m.data.dataset)}">Download dataset CSV ↓</a>`:''}<button data-view="sources">Source coverage</button></div></article>`).join('');
+  $('#messages').innerHTML=messages.map((m,index)=>{
+    if(m.role==='user')return `<div class="message"><div class="question-bubble">${esc(m.content)}</div></div>`;
+    const d=m.data,direct=d.provider&&d.provider.freshness!=='imported';
+    return `<article class="message"><div class="answer-head"><img src="/brand/mark.svg" alt="SWK"><strong>SWK DATA</strong><span>${esc(answerOrigin(d))}</span></div><div class="answer-body">${markdown(m.content)}</div>${d.notice?`<p class="answer-notice">${esc(d.notice)}</p>`:''}${d.rows?.length?`<div class="answer-table">${table(d.rows,d.columns)}</div><p class="answer-notice">${answerNotice(d)}</p>`:''}<div class="sources-label">${d.rows?.length?'Evidence & further sources':'Source references · no matching records used'}</div><div class="citations">${(d.sources||[]).map((s,i)=>`<a class="citation" href="${esc(urlSafe(s.url))}" target="_blank" rel="noopener">${i+1}. ${esc(s.name)} ↗<small>${esc(s.publisher)} · ${esc(s.status==='connected'?'Direct publisher':s.status==='loaded'?'Imported':'Reference only')}${s.dataThrough?' · through '+esc(s.dataThrough):''}</small></a>`).join('')}</div><div class="answer-actions"><button data-copy="${index}">Copy answer</button>${d.rows?.length&&!direct?`<button data-open-dataset="${esc(d.dataset)}">Explore this dataset ↗</button><a href="/api/export?dataset=${encodeURIComponent(d.dataset)}">Download dataset CSV ↓</a>`:''}${direct&&d.rows?.length?`<button data-answer-csv="${index}">Download answer CSV ↓</button>`:''}<button data-view="sources">Source coverage</button></div></article>`;
+  }).join('');
 }
+function downloadAnswer(data){
+  const columns=[...new Set([...data.columns,'source_url','fetched_at','transport'])];
+  const rows=data.rows.map(r=>({...r,source_url:data.sources[(r.source_ref||1)-1]?.url,fetched_at:data.provider.fetchedAt,transport:data.provider.transport}));
+  const cell=value=>'"'+String(value??'').replace(/^[=+@\t\r-]/,v=>"'"+v).replaceAll('"','""')+'"';
+  const csv=[columns.map(cell).join(','),...rows.map(r=>columns.map(k=>cell(r[k])).join(','))].join('\r\n');
+  const link=document.createElement('a');link.href=URL.createObjectURL(new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8'}));link.download='swk-dubai-data-answer.csv';link.click();setTimeout(()=>URL.revokeObjectURL(link.href),1000);
+}
+
 async function ask(question){
   question=question.trim();if(!question||busy)return;
   if(question.length>2000){toast('Please keep the question under 2,000 characters.');return;}
@@ -45,7 +69,7 @@ async function loadStats(){
   }catch{ $('#scope-note').textContent='Coverage information is temporarily unavailable. Open Sources & coverage for publisher references.';}
 }
 function renderCoverage(){const counts={loaded:sources.filter(s=>s.status==='loaded').length,catalogued:sources.filter(s=>s.status==='catalogued').length,restricted:sources.filter(s=>['paid','permission_required'].includes(s.status)).length};$('#coverage-cards').innerHTML=[['Imported datasets',stats.datasets||counts.loaded],['Searchable records',num(stats.aggregateRows+stats.transactions)],['Sources catalogued',sources.length],['Access-dependent sources',counts.restricted]].map(([label,n])=>`<div class="coverage-card"><strong>${esc(n)}</strong><span>${label}</span></div>`).join('');}
-const statusLabel={loaded:'Imported',catalogued:'Catalogued',permission_required:'Permission required',paid:'Commercial access',unavailable:'Unavailable'};
+const statusLabel={loaded:'Imported',connected:'Direct connection',catalogued:'Catalogued',permission_required:'Permission required',paid:'Commercial access',unavailable:'Unavailable'};
 function renderSources(){
   const q=$('#source-search').value.toLowerCase(),emirate=$('#emirate-filter').value,status=$('#status-filter').value;
   const list=sources.filter(s=>(!emirate||s.emirate===emirate)&&(!status||s.status===status)&&(!q||[s.name,s.publisher,s.description,s.category,...s.tags].join(' ').toLowerCase().includes(q)));
@@ -65,6 +89,7 @@ document.addEventListener('click',async e=>{
   const prompt=e.target.closest('[data-prompt]');if(prompt){ask(prompt.dataset.prompt);return;}
   const history=e.target.closest('[data-conversation]');if(history&&!busy){const c=conversations.find(c=>c.id===history.dataset.conversation);if(c){activeConversation=c.id;messages=structuredClone(c.messages);switchView('ask');renderMessages();}return;}
   const copy=e.target.closest('[data-copy]');if(copy){try{await navigator.clipboard.writeText(messages[Number(copy.dataset.copy)].content);toast('Answer copied.');}catch{toast('Copy is unavailable in this browser.');}return;}
+  const answerCsv=e.target.closest('[data-answer-csv]');if(answerCsv){downloadAnswer(messages[Number(answerCsv.dataset.answerCsv)].data);return;}
   const dataset=e.target.closest('[data-open-dataset]');if(dataset){$('#dataset-select').value=dataset.dataset.openDataset;$('#record-search').value='';page=0;switchView('explore');}
 });
 $('#home-form').addEventListener('submit',e=>{e.preventDefault();ask($('#home-question').value);});$('#chat-form').addEventListener('submit',e=>{e.preventDefault();ask($('#chat-question').value);});
@@ -75,5 +100,6 @@ $('#download-csv').onclick=()=>{location.href='/api/export?'+new URLSearchParams
 for(const id of ['source-search','emirate-filter','status-filter'])$('#'+id).addEventListener(id==='source-search'?'input':'change',renderSources);
 $('#about-button').onclick=()=>$('#about').showModal();$('#close-about').onclick=()=>$('#about').close();
 document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();startNew();}if(e.key==='Escape')$('#sidebar').classList.remove('open');});
-async function init(){drawIcons();renderHistory();try{[sources,datasets]=await Promise.all([api('/api/sources'),api('/api/datasets')]);$('#dataset-select').innerHTML=datasets.map(d=>`<option value="${esc(d.id)}">${esc(d.title||d.name)}${d.status==='importing'?' · importing':''}</option>`).join('');$('#dataset-select').value='communities';$('#emirate-filter').innerHTML+=[...new Set(sources.map(s=>s.emirate))].sort().map(e=>`<option value="${esc(e)}">${esc(e)}</option>`).join('');renderSources();await loadStats();}catch(e){toast(e.message);}}
+async function loadProvider(){try{const {datadubai:p}=await api('/api/providers');$('#provider-status').textContent=p.enabled?'Dubai Data direct connection · six-hour cache · source dates preserved':'Dubai Data direct connection is disabled. Saved imports remain searchable.';$('#provider-status').classList.toggle('connected',p.enabled);if(p.lastError)$('#provider-status').textContent+=' Saved imports are available when the provider cannot be reached.';}catch{$('#provider-status').textContent='Provider status is unavailable. Check the source shown on each answer.';}}
+async function init(){drawIcons();loadProvider();renderHistory();try{[sources,datasets]=await Promise.all([api('/api/sources'),api('/api/datasets')]);$('#dataset-select').innerHTML=datasets.map(d=>`<option value="${esc(d.id)}">${esc(d.title||d.name)}${d.status==='importing'?' · importing':''}</option>`).join('');$('#dataset-select').value='communities';$('#emirate-filter').innerHTML+=[...new Set(sources.map(s=>s.emirate))].sort().map(e=>`<option value="${esc(e)}">${esc(e)}</option>`).join('');renderSources();await loadStats();}catch(e){toast(e.message);}}
 init();setInterval(loadStats,60000);

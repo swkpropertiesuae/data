@@ -14,6 +14,7 @@ As verified on 6 November 2026: **1,459,928 searchable records across 24 importe
 - A fixed historical DLD sales snapshot published by Dubai Real Estate Data: **1,382,848 verified indexed records** through 2 November 2026. Original CSV and Parquet archives are preserved in R2.
 - 83 catalogue entries spanning DLD registers, rents, projects, valuations, developers, brokers, investor reports, ADREC, Ajman, RAK, national statistics, geospatial sources, commercial APIs and scraping tools.
 - Nine official Ajman public datasets imported successfully: **67,820 records**, covering unit sales/transactions/registrations, projects, land sales/transactions, office records, classifications and licensed activities. Source dates vary from June to August 2026.
+- Direct Dubai Data MCP connection, with public JSON mirrors, six-hour caching, dated citations and imported-data fallback.
 - Workers AI summaries grounded in retrieved records, with deterministic fallback, numerical checks and daily inference caps.
 - Daily DataDubai refresh at 07:15 Dubai time, plus finite, resumable archive import workflows.
 - Browser-local research history, source dates, provenance, quality fields and clear loaded/catalogued/access-dependent status.
@@ -42,6 +43,7 @@ npm test
 |---|---|
 | `public/` | Responsive interface and original SWK brand assets |
 | `src/worker.mjs` | API, retrieval, evidence validation and request handling |
+| `src/datadubai.mjs` | Fixed-origin MCP client, JSON mirrors, caching, query budgets and provenance |
 | `src/retrieval.mjs` | Intent selection, aliases, facts and numerical guard |
 | `src/ingestion.mjs` | Bounded refresh, streamed archives and resumable bulk indexing |
 | `src/workflow.mjs` | One-time durable import jobs |
@@ -60,6 +62,7 @@ Large historical archives live in object storage rather than Git. The repository
 | Endpoint | Purpose |
 |---|---|
 | `POST /api/chat` | JSON `{ "question": "Compare JVC and Business Bay" }` |
+| `GET /api/providers` | Direct provider configuration, last connection/fetch and discovered tools |
 | `GET /api/stats` | Actual imported counts, archive state and indexing progress |
 | `GET /api/sources` | Source catalogue and current imported status |
 | `GET /api/datasets` | Available datasets and fields |
@@ -74,4 +77,4 @@ DataDubai CSV aggregates: **Dubai Data (datadubai.ae), Continental Club Property
 
 Gross yields exclude costs and vacancy. Construction percentages reflect the last inspection. Registered project units do not establish delivered supply. Some source snapshots are older than the retrieval date. No private investor, tenant, buyer or owner identity list is included.
 
-See [source documentation](docs/DATA_SOURCES.md), [attribution](data/ATTRIBUTION.md) and [operations](docs/OPERATIONS.md). GitHub Actions validates changes; deployment requires account authorization through the deployment environment.
+See [direct Dubai Data integration](docs/DUBAI_DATA.md), [source documentation](docs/DATA_SOURCES.md), [attribution](data/ATTRIBUTION.md) and [operations](docs/OPERATIONS.md). GitHub Actions validates changes; deployment requires account authorization through the deployment environment.

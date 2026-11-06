@@ -1,6 +1,6 @@
 {
   "name": "swk-data",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
   "description": "SWK UAE property intelligence: cited answers and transparent public data",
@@ -8,7 +8,7 @@
     "dev": "node scripts/dev.mjs",
     "build": "node scripts/build.mjs",
     "test": "node --test test/*.test.mjs",
-    "check": "node --check src/worker.mjs && node --check src/retrieval.mjs && node --check public/app.js"
+    "check": "node --check src/worker.mjs && node --check src/retrieval.mjs && node --check src/datadubai.mjs && node --check public/app.js && node --check dist/worker.mjs"
   },
   "engines": { "node": ">=22" }
 }
