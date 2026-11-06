@@ -105,9 +105,17 @@ source('propertyfinder','Property Finder Listings','Property Finder','UAE','list
 source('propertymonitor','Property Monitor Intelligence APIs','Property Monitor','UAE','commercial','https://propertymonitor.com/products-and-services/pm/pm-api','Comparable transactions, market statistics, indices, address matching, POIs and automated valuation APIs.',status='paid',access='Provider agreement, credentials and pricing',tags=['API','AVM','comparables','valuation'])
 source('reidin','REIDIN Data and APIs','REIDIN','UAE','commercial','https://reidin.com/','Proprietary real-estate analytics, transactions, asking prices, trends, occupancy, supply metrics and APIs.',status='paid',access='Provider agreement, credentials and pricing',tags=['REIDIN','API','occupancy','service charges'])
 source('airdna','AirDNA Short-term Rental APIs','AirDNA','UAE','commercial','https://docs.airdna.co/','Short-stay market research, occupancy, nightly rates, revenue estimates and comparable properties. Confirm the contracted coverage for UAE locations.',status='paid',access='Enterprise/provider access and market coverage agreement',tags=['holiday homes','short-term rentals','Airbnb','occupancy'])
-source('swk_developer_inventory','Authorised Developer Inventory','Participating developers / SWK','UAE','inventory','https://www.swkpropertiesuae.com/','SWK-authorised developer inventory, availability, payment plans, commissions and marketing materials can be connected after delivery and permission. No private developer inventory is included here.',status='permission_required',access='Developer feed / authorised files required',tags=['Emaar','Sobha','Damac','Azizi','Binghatti','Ellington','Samana','Danube','Imtiaz','Aldar','Arada','Al Hamra','inventory','payment plans'])
-source('swk_investors','SWK Consented Investor CRM','SWK Properties','UAE','investors','https://os.swkpropertiesuae.com/','SWK first-party investor preferences, enquiries and transaction history require authenticated, role-based access and consent. No personal investor records are copied into this public repository or public search.',status='permission_required',access='Private authenticated integration required',tags=['investor preferences','CRM','leads','first-party'])
 source('private_owner_contacts','Private Owner / Investor Contact Data','Not a public dataset','UAE','coverage','https://dubailand.gov.ae/en/open-data/real-estate-data','Public market datasets do not provide an unrestricted owner, buyer or tenant phone/email directory. Leaked registries and unauthorised personal contact lists are excluded.',status='unavailable',access='Not offered by this service',tags=['owner phones','investor contacts','privacy'])
+
+# Only public publisher feeds belong in this public registry.
+feeds_path = DATA / 'datadubai-public-feeds.json'
+if feeds_path.exists():
+    for feed in json.loads(feeds_path.read_text()):
+        row = next((r for r in rows if r['url'] == feed['page']), None)
+        if row is None:
+            source('datadubai_' + feed['id'], 'Dubai Data · ' + feed['name'], 'Dubai Data / Continental Club Property', 'Dubai', 'reference', feed['page'], 'Public ' + feed['name'].lower() + ' JSON feed with publisher provenance and dates.')
+            row = rows[-1]
+        row.update(name='Dubai Data · ' + feed['name'], directFeed=feed['id'], access='Connected on demand in production; six-hour cache; not an imported dataset', license='CC BY 4.0; attribution and source link required', tags=['Dubai Data', 'JSON', feed['id']])
 
 # Preserve explicit download provenance without converting it to loaded status.
 ref_path = DATA / 'references-manifest.json'

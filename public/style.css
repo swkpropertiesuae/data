@@ -4,3 +4,5 @@
 .intro{font-size:13px;color:#727d66}.suggestions strong{font-size:12px}.suggestions button>span:not(.suggestion-icon){font-size:11px;color:#818d75}.topic-pills button{font-size:10px;color:#79866c}.evidence-strip{font-size:10px;color:#7c896f}.scope-note{font-size:10px;color:#849078}table{font-size:11px}.answer-notice{color:#7f8b72}.source-row p{font-size:11px;color:#7c896e}.data-controls label{color:#768467}.footer{color:#839175}@media(max-width:760px){.intro{font-size:12px}.suggestions strong{font-size:11px}.suggestions button>span:not(.suggestion-icon){font-size:10px}.topic-pills button{font-size:9px}.evidence-strip,.scope-note{font-size:9px}}
 
 .provider-note{max-width:720px;margin:20px auto 4px;font-size:12px;line-height:1.6;color:#68645c}.provider-note.connected{color:#766234}.status-tag.connected{background:#f1ead9;color:#765c27}
+
+.answer-methodology{font-size:12px;line-height:1.6;color:#68645c;margin:14px 0}.answer-methodology summary,.feed-topics summary{cursor:pointer;color:#766234}.answer-methodology ul{padding-left:18px}.feed-topics{margin:16px auto;max-width:720px;font-size:12px}.feed-topics .topic-pills{flex-wrap:wrap}

@@ -4,7 +4,7 @@
 
 SWK-branded UAE property research with a conversational search interface, evidence tables, cited answers, a record explorer, CSV exports and a transparent source catalogue.
 
-As verified on 6 November 2026: **1,459,928 searchable records across 24 imported datasets**, plus an 83-source catalogue.
+Imported records verified on 6 November 2026: **1,459,928 searchable records across 24 imported datasets**. The catalogue expanded to 88 public sources on 7 November 2026.
 
 ## What is included
 
@@ -12,8 +12,9 @@ As verified on 6 November 2026: **1,459,928 searchable records across 24 importe
 - 12 genuine DataDubai CSV datasets: 9,208 aggregate rows, source snapshot through 29 October 2026.
 - Two additional DataDubai JSON references: 46 community service-charge observations for budget year 2026 and six stock/pipeline summary rows.
 - A fixed historical DLD sales snapshot published by Dubai Real Estate Data: **1,382,848 verified indexed records** through 2 November 2026. Original CSV and Parquet archives are preserved in R2.
-- 83 catalogue entries spanning DLD registers, rents, projects, valuations, developers, brokers, investor reports, ADREC, Ajman, RAK, national statistics, geospatial sources, commercial APIs and scraping tools.
+- 88 public catalogue entries spanning DLD registers, rents, projects, valuations, developers, brokers, investor reports, ADREC, Ajman, RAK, national statistics, geospatial sources, commercial APIs and scraping tools.
 - Nine official Ajman public datasets imported successfully: **67,820 records**, covering unit sales/transactions/registrations, projects, land sales/transactions, office records, classifications and licensed activities. Source dates vary from June to August 2026.
+- Ten additional direct public JSON feeds: launches, mortgages/gifts, affordability, handovers, construction bands, methodology, glossary, publisher sources, net-yield worked example and latest publisher sales.
 - Direct Dubai Data MCP connection, with public JSON mirrors, six-hour caching, dated citations and imported-data fallback.
 - Workers AI summaries grounded in retrieved records, with deterministic fallback, numerical checks and daily inference caps.
 - Daily DataDubai refresh at 07:15 Dubai time, plus finite, resumable archive import workflows.

@@ -74,6 +74,8 @@ Ajman granularity and licences vary by dataset. Public official-portal access is
 
 ## Catalog
 
+Public source catalogue: 88 entries. Direct-feed statuses are overlaid by the production API; a catalogue entry alone is not an import.
+
 | ID | Source | Emirate | Status |
 |---|---|---|---|
 | `datadubai_areas` | [Dubai Data · Areas](https://github.com/datadubai/dubai-real-estate-dld/blob/main/data/areas.csv) | Dubai | loaded |
@@ -106,10 +108,10 @@ Ajman granularity and licences vary by dataset. Public official-portal access is
 | `dld_golden_visa` | [DLD Golden Visa Investor Service](https://dubailand.gov.ae/en/eservices/request-for-golden-visa-investor/) | Dubai | catalogued |
 | `dld_service_charges` | [DLD / RERA Service Charge Reference](https://dubailand.gov.ae/en/) | Dubai | catalogued |
 | `datadubai_service_charges` | [Dubai Data Service Charges](https://datadubai.ae/service-charges/) | Dubai | catalogued |
-| `datadubai_construction` | [Dubai Data · Construction Progress](https://datadubai.ae/construction/) | Dubai | catalogued |
+| `datadubai_construction` | [Dubai Data · Construction bands](https://datadubai.ae/construction/) | Dubai | catalogued |
 | `datadubai_stock` | [Dubai Data · Residential Stock and Pipeline](https://datadubai.ae/stock/) | Dubai | catalogued |
-| `datadubai_transactions` | [Dubai Data · Latest Registered Sales](https://datadubai.ae/transactions/) | Dubai | catalogued |
-| `datadubai_mortgages` | [Dubai Data · Mortgages and Gifts](https://datadubai.ae/mortgages/) | Dubai | catalogued |
+| `datadubai_transactions` | [Dubai Data · Latest publisher transactions](https://datadubai.ae/transactions/) | Dubai | catalogued |
+| `datadubai_mortgages` | [Dubai Data · Mortgages and gifts](https://datadubai.ae/mortgages/) | Dubai | catalogued |
 | `datadubai_compare` | [Dubai Data · Community Comparisons](https://datadubai.ae/) | Dubai | catalogued |
 | `datadubai_mcp` | [Dubai Data Public MCP](https://datadubai.ae/mcp/) | Dubai | catalogued |
 | `adrec_market` | [ADREC Market Data](https://adrec.gov.ae/en/market-data) | Abu Dhabi | catalogued |
@@ -156,9 +158,14 @@ Ajman granularity and licences vary by dataset. Public official-portal access is
 | `propertymonitor` | [Property Monitor Intelligence APIs](https://propertymonitor.com/products-and-services/pm/pm-api) | UAE | paid |
 | `reidin` | [REIDIN Data and APIs](https://reidin.com/) | UAE | paid |
 | `airdna` | [AirDNA Short-term Rental APIs](https://docs.airdna.co/) | UAE | paid |
-| `swk_developer_inventory` | [Authorised Developer Inventory](https://www.swkpropertiesuae.com/) | UAE | permission_required |
-| `swk_investors` | [SWK Consented Investor CRM](https://os.swkpropertiesuae.com/) | UAE | permission_required |
 | `private_owner_contacts` | [Private Owner / Investor Contact Data](https://dubailand.gov.ae/en/open-data/real-estate-data) | UAE | unavailable |
+| `datadubai_launches` | [Dubai Data · Project launches](https://datadubai.ae/projects/launches/) | Dubai | catalogued |
+| `datadubai_affordability` | [Dubai Data · Affordability bands](https://datadubai.ae/affordability/) | Dubai | catalogued |
+| `datadubai_handover` | [Dubai Data · Declared handover years](https://datadubai.ae/handover/) | Dubai | catalogued |
+| `datadubai_methodology` | [Dubai Data · Methodology](https://datadubai.ae/methodology/) | Dubai | catalogued |
+| `datadubai_glossary` | [Dubai Data · Property glossary](https://datadubai.ae/glossary/) | Dubai | catalogued |
+| `datadubai_sources` | [Dubai Data · Publisher source coverage](https://datadubai.ae/sources/) | Dubai | catalogued |
+| `datadubai_roi` | [Dubai Data · Net yield worked example](https://datadubai.ae/roi-calculator/) | Dubai | catalogued |
 
 ## Additional retrieval attempt
 

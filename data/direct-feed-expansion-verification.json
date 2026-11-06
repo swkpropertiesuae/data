@@ -1,0 +1,29 @@
+{
+  "verifiedDateDubai": "2026-11-07",
+  "application": "https://data.swk.rent/",
+  "workerDeployment": "46bd9bded41540859536382384c1735e",
+  "publicFeedResponsesVerified": 10,
+  "feedAdaptersCoveredByTests": 10,
+  "automatedChecksPassedLocally": 44,
+  "catalogueEntries": 88,
+  "importedDatasets": 24,
+  "searchableImportedRecords": 1459928,
+  "additionalImportsClaimed": false,
+  "launchTableDisplayLimit": 50,
+  "fullJsonAccess": "Original publisher JSON link on each section answer",
+  "sourceCutoffPolicy": "Preserve each feed cutoff; no transaction date invented for glossary or methodology",
+  "screenshot": "docs/swk-data-public-feeds.png",
+  "uiQueriesVerified": [
+    "mortgages and gifts",
+    "declared handovers in 2027",
+    "newly registered launches",
+    "methodology and sample thresholds"
+  ],
+  "csvVerified": {
+    "rows": 2,
+    "separateLoanAndGiftFields": true,
+    "originalSourceLink": true
+  },
+  "temporaryVerificationWorkerRemoved": true,
+  "internalReferencesExcluded": true
+}

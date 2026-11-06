@@ -52,6 +52,7 @@ export function sortExpression(dataset){
 }
 export function safeLike(s){return String(s).replace(/[\\%_]/g,'\\$&');}
 export function formatValue(value,key=''){
+  if(key==='year'||key.endsWith('_year'))return String(value??'—');
   if(value===null||value===undefined||value==='')return '—';
   if(typeof value==='string'&&!/^-?\d+(\.\d+)?$/.test(value))return value;
   const n=Number(value);if(!Number.isFinite(n))return String(value);

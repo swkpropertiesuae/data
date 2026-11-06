@@ -74,3 +74,20 @@ Automated checks cover real imported records, direct API routing, SSE transport 
 The deployed site was checked with direct community comparisons (JSON), project details (MCP), monthly reports (MCP), yield rankings (MCP), multi-project search (MCP), connected-source filtering, CSV download and a repeat cached entity lookup. The CSV contained all eight displayed ranking rows, original source URLs, source cutoff, fetch time and transport. All 26 automated checks passed locally and on GitHub Actions. Imported totals remained 1,459,928 records across 24 datasets, with an 83-source catalogue. The temporary verification Worker was removed after testing.
 
 ![Verified direct Dubai Data answer](swk-data-direct.png)
+
+## Expanded public feeds, 7 November 2026
+
+Ten additional public JSON feeds are now routed directly from chat: project launches, mortgages/gifts, affordability bands, declared handover years, construction completion bands, methodology constants, glossary terms, publisher-held dataset coverage, a net-yield worked example, and the publisher's latest-transactions sample. Their verified URLs and example questions are recorded in `data/datadubai-public-feeds.json`.
+
+The homepage's **More Dubai Data topics** control opens all ten topics. Each response provides a CSV of displayed rows and a link to the full publisher JSON. Display limits do not change a feed's published match count. These connections increase the catalogue to 88 public entries; they do not increase the 24 imported datasets or 1,459,928 imported records.
+
+Mortgage medians and totals are explicitly named loan amounts. Gift transfers have separate fields and rows. The adapter never adds either population to sales. Mortgage interest rates are not supplied by the feed. Declared handover years describe registry plans, not delivered homes. Publisher source-warehouse counts are labelled separately from SWK import counts. ROI figures are an illustrative publisher example with its formula and stated assumptions, not a return calculated for a user's property.
+
+Methodology and glossary JSON do not declare transaction cutoffs, so the response keeps that field empty; the methodology version date is preserved separately. Eight interpretation rules are available at `/api/methodology` and context-specific notes remain visible independently of AI wording. Small sales and rental samples are checked separately; counts are retained when associated statistics are suppressed. DLD administrative areas are not silently equated to market community names.
+
+A failed section lookup cannot fall back to an unrelated community price table. Existing cache, response-size, request-deadline and daily-query caps remain in place. No recurring job or bulk crawl was added. The latest-transactions feed is a limited publisher sample, separate from the larger historical archive. Launches by an explicitly requested year use the publisher's documented year URL and are validated before use.
+
+
+Live verification checked separate mortgage/gift amounts and their CSV, declared handovers for 2027, 50 displayed launch rows out of 276 published matches with full JSON access, and methodology constants with no invented transaction cutoff. The temporary feed-check Worker was removed. All 44 local checks passed.
+
+![Verified expanded Dubai Data feeds](swk-data-public-feeds.png)

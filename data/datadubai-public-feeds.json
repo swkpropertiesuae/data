@@ -1,0 +1,102 @@
+[
+  {
+    "id": "launches",
+    "name": "Project launches",
+    "page": "https://datadubai.ae/projects/launches/",
+    "json": "https://datadubai.ae/projects/launches.json",
+    "question": "Show newly registered Dubai project launches",
+    "verifiedHttpStatus": 200,
+    "verifiedDateDubai": "2026-11-07",
+    "access": "Direct on demand; not bulk imported"
+  },
+  {
+    "id": "mortgages",
+    "name": "Mortgages and gifts",
+    "page": "https://datadubai.ae/mortgages/",
+    "json": "https://datadubai.ae/mortgages.json",
+    "question": "Show Dubai mortgage and gift registrations separately",
+    "verifiedHttpStatus": 200,
+    "verifiedDateDubai": "2026-11-07",
+    "access": "Direct on demand; not bulk imported"
+  },
+  {
+    "id": "affordability",
+    "name": "Affordability bands",
+    "page": "https://datadubai.ae/affordability/",
+    "json": "https://datadubai.ae/affordability.json",
+    "question": "Show Dubai affordability budget bands",
+    "verifiedHttpStatus": 200,
+    "verifiedDateDubai": "2026-11-07",
+    "access": "Direct on demand; not bulk imported"
+  },
+  {
+    "id": "handover",
+    "name": "Declared handover years",
+    "page": "https://datadubai.ae/handover/",
+    "json": "https://datadubai.ae/handover.json",
+    "question": "Show declared Dubai handovers by year",
+    "verifiedHttpStatus": 200,
+    "verifiedDateDubai": "2026-11-07",
+    "access": "Direct on demand; not bulk imported"
+  },
+  {
+    "id": "construction",
+    "name": "Construction bands",
+    "page": "https://datadubai.ae/construction/",
+    "json": "https://datadubai.ae/construction.json",
+    "question": "Show Dubai construction completion bands",
+    "verifiedHttpStatus": 200,
+    "verifiedDateDubai": "2026-11-07",
+    "access": "Direct on demand; not bulk imported"
+  },
+  {
+    "id": "methodology",
+    "name": "Methodology",
+    "page": "https://datadubai.ae/methodology/",
+    "json": "https://datadubai.ae/methodology.json",
+    "question": "Explain Dubai Data methodology and sample thresholds",
+    "verifiedHttpStatus": 200,
+    "verifiedDateDubai": "2026-11-07",
+    "access": "Direct on demand; not bulk imported"
+  },
+  {
+    "id": "glossary",
+    "name": "Property glossary",
+    "page": "https://datadubai.ae/glossary/",
+    "json": "https://datadubai.ae/glossary.json",
+    "question": "Show the Dubai Data glossary",
+    "verifiedHttpStatus": 200,
+    "verifiedDateDubai": "2026-11-07",
+    "access": "Direct on demand; not bulk imported"
+  },
+  {
+    "id": "sources",
+    "name": "Publisher source coverage",
+    "page": "https://datadubai.ae/sources/",
+    "json": "https://datadubai.ae/sources.json",
+    "question": "Which datasets does Dubai Data hold and use?",
+    "verifiedHttpStatus": 200,
+    "verifiedDateDubai": "2026-11-07",
+    "access": "Direct on demand; not bulk imported"
+  },
+  {
+    "id": "roi",
+    "name": "Net yield worked example",
+    "page": "https://datadubai.ae/roi-calculator/",
+    "json": "https://datadubai.ae/roi-calculator.json",
+    "question": "Explain the Dubai Data net yield worked example",
+    "verifiedHttpStatus": 200,
+    "verifiedDateDubai": "2026-11-07",
+    "access": "Direct on demand; not bulk imported"
+  },
+  {
+    "id": "latest",
+    "name": "Latest publisher transactions",
+    "page": "https://datadubai.ae/transactions/",
+    "json": "https://datadubai.ae/transactions.json",
+    "question": "Show the latest registered transactions from Dubai Data",
+    "verifiedHttpStatus": 200,
+    "verifiedDateDubai": "2026-11-07",
+    "access": "Direct on demand; not bulk imported"
+  }
+]

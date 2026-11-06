@@ -20,7 +20,7 @@ The original initial indexing instance was terminated after successful checkpoin
 
 One-time workflow names: `swk-data-import` (DataImport), `swk-data-seed` (SeedImport), `swk-data-ajman` (AjmanImport). The Ajman importer checks a declared reuse licence, limits each export to 24 MB / 40,000 rows and preserves old datasets on failure. It records blocked/unavailable results and never labels them loaded.
 
-The daily refresh does not scrape Bayut, Property Finder, private CRM contacts or unlicensed media. Those services remain catalogued with access requirements. Investor identity/contact databases are not public market datasets.
+The daily refresh does not scrape Bayut, Property Finder, private contact data or unlicensed media. Publicly documented external services retain their access requirements. Investor identity/contact databases are not public market datasets.
 
 ## AI and privacy
 
@@ -38,7 +38,7 @@ Check Cloudflare Workflow status for failures and D1 dataset_status/ingest_state
 
 ## Remaining integrations
 
-Access-approved ADREC exports/API, verified additional DLD registers, authorised developer inventory, licensed listing feeds, current published investor reports, geospatial subsets, and consented SWK CRM integrations can be added through separate adapters. Each needs a publisher, licence/access basis, date and coverage test before being shown as imported. These are integration opportunities, not currently indexed facts.
+Access-approved ADREC exports/API, verified additional DLD registers, authorised developer inventory, licensed listing feeds, current published investor reports, geospatial subsets can be added through separate adapters. Each needs a publisher, licence/access basis, date and coverage test before being shown as imported. These are integration opportunities, not currently indexed facts.
 
 ## Verified initial production import
 
@@ -54,3 +54,9 @@ Disable the direct provider with `DUBAI_DATA_ENABLED=false` to serve imported da
 Cache misses are bounded to 200 direct queries globally per UTC day and 20 per visitor per UTC day. Cache hits do not spend another direct-query allowance. Each query has a 22-second upstream deadline, capped MCP calls and one MiB per response. Normal cached responses are reusable for six hours. During upstream failures an existing response may be served for up to seven days with a stale-cache notice; after that the imported snapshot is used. The daily cleanup removes old cached provider responses.
 
 Public data responses, short entity lookup parameters (inside published search responses) and a rotating daily visitor hash can be stored. Raw chat prompts, IP addresses, credentials and conversation history are not added to this cache. No new cron or unbounded crawl is introduced.
+
+## Public JSON sections
+
+The ten section adapters in `src/dubai-sections.mjs` share the existing six-hour provider cache and query budget. They require no additional bindings, credentials, database tables or schedules. Each API answer includes `methodologyNotes`; section answers also include `provider.originalJsonUrl` for the complete source response. `data/datadubai-public-feeds.json` records source URLs and verification status. Source entries with `directFeed` are shown as Direct connection when the provider is enabled, without treating them as imported datasets.
+
+The source catalogue is now 88 public entries. Imported record and dataset counts are unchanged. `GET /api/methodology` serves the eight versioned interpretation rules. Mortgage/gift failures deliberately return no substitute numerical table. Methodology/glossary cutoffs stay unknown where the publisher declares none.

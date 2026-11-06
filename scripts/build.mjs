@@ -12,7 +12,7 @@ function walk(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){cons
 walk(path.join(root,'public'));
 const generated=`export const CATALOG=${JSON.stringify(CATALOG)};\nexport const MANIFEST=${JSON.stringify(MANIFEST)};\nexport const ASSETS=${JSON.stringify(ASSETS)};\n`;
 fs.writeFileSync(path.join(root,'src/generated.mjs'),generated);
-const files=['generated.mjs','retrieval.mjs','csv.mjs','ingestion.mjs','ajman.mjs','workflow.mjs','datadubai.mjs','worker.mjs'];
+const files=['generated.mjs','retrieval.mjs','csv.mjs','ingestion.mjs','ajman.mjs','workflow.mjs','dubai-sections.mjs','datadubai.mjs','worker.mjs'];
 let source="import {WorkflowEntrypoint} from 'cloudflare:workers';\n";
 for(const file of files){let code=fs.readFileSync(path.join(root,'src',file),'utf8').replace(/^import .*;\s*$/gm,'').replace(/^export \{[^}]+\};?\s*$/gm,'');code=code.replace(/export (const|function|async function)/g,'$1');source+='\n'+code;}
 fs.mkdirSync(path.join(root,'dist'),{recursive:true});fs.writeFileSync(path.join(root,'dist/worker.mjs'),source);

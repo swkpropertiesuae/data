@@ -1,5 +1,6 @@
 // Fixed-origin, read-only Dubai Data provider. No API keys or user-selected tools.
 import {normalize,expandAliases,formatValue,LABELS} from './retrieval.mjs';
+import {DUBAI_SECTIONS,DUBAI_METHODOLOGY,dubaiSectionPlan,validateDubaiSection,dubaiSectionEvidence,dubaiSectionAnswer,protectDubaiStatistics,dubaiMethodologyNotes} from './dubai-sections.mjs';
 export const DUBAI_DATA_ENDPOINT='https://mcp.datadubai.ae/mcp';
 const DD_ALLOWED_TOOLS=new Set(['search','get_entity','get_market_summary','get_monthly_report','list_rankings']);
 const DD_PROTOCOLS=new Set(['2025-11-25','2025-06-18','2025-03-26']);
@@ -17,9 +18,11 @@ export function dubaiEntityHint(row){
   return {name:row.name||row.community,type:{communities:'community',projects:'project',developers:'developer',areas:'area'}[match[1]],slug:match[2],url};
 }
 export function dubaiDataPlan(question,intent,hints=[]){
-  if(intent.privacy||intent.investor||intent.emirate||intent.dataset==='transactions'||/what data|which data|sources|datasets|scrap|api|catalog|data.*available/i.test(question))return null;
+  if(intent.privacy||intent.investor||intent.emirate)return null;
   // Never forward email, long identifier strings or contact requests to the publisher.
   if(/@|\d{7,}|phone|mobile|passport|emirates.?id|owner.?name|buyer.?name|tenant.?name/i.test(question))return null;
+  const section=dubaiSectionPlan(expandAliases(question),intent,hints);if(section)return section;
+  if(intent.dataset==='transactions'||/what data|which data|sources|datasets|scrap|api|catalog|data.*available/i.test(question))return null;
   const q=normalize(expandAliases(question));
   const monthISO=question.match(/\b(20\d{2})-(0[1-9]|1[0-2])\b/);
   const monthName=DD_MONTHS.findIndex(m=>new RegExp('\\b'+m+'\\b|\\b'+m.slice(0,3)+'\\b').test(q));
@@ -127,10 +130,11 @@ async function ddStatus(env,update){
 export async function dubaiDataStatus(env){
   const enabled=env.DUBAI_DATA_ENABLED==='true';
   const row=await env.DB.prepare('SELECT state FROM ingest_state WHERE id=?').bind('datadubai_provider').first();
-  return {id:'datadubai',name:'Dubai Data',enabled,endpoint:DUBAI_DATA_ENDPOINT,cacheHours:6,...JSON.parse(row?.state||'{}')};
+  return {id:'datadubai',name:'Dubai Data',enabled,endpoint:DUBAI_DATA_ENDPOINT,cacheHours:6,feeds:Object.entries(DUBAI_SECTIONS).map(([id,s])=>({id,...s,url:'https://datadubai.ae/'+s.path+'/',json:'https://datadubai.ae/'+s.path+'.json'})),...JSON.parse(row?.state||'{}')};
 }
 function ddValidate(data,method){
-  if(method==='search'||method==='list_rankings'){if(!Array.isArray(data.results))throw new Error('invalid_results');}
+  if(method.startsWith('section:'))validateDubaiSection(data,method.slice(8));
+  else if(method==='search'||method==='list_rankings'){if(!Array.isArray(data.results))throw new Error('invalid_results');}
   else if(method==='get_monthly_report'){if(!data.key_figures||!/^20\d\d-\d\d$/.test(data.month))throw new Error('invalid_report');}
   else if(method==='service_charges'){if(!Array.isArray(data.communities))throw new Error('invalid_service_charges');}
   else if(method==='stock'){if(!Array.isArray(data.bands))throw new Error('invalid_stock');}
@@ -161,7 +165,7 @@ export async function queryDubaiData({env,req,question,intent,hints=[],fetcher=f
       budget??=ddBudget(env,req,now);await budget;
       let data,transport='mcp';
       try{
-        if(['stock','service_charges'].includes(method))throw new Error('json_only');
+        if(['stock','service_charges'].includes(method)||method.startsWith('section:'))throw new Error('json_only');
         if(connectionError)throw connectionError;
         if(!connection){try{connection=await client.connect();await ddStatus(env,{state:'connected',...connection,lastConnectedAt:new Date(now).toISOString(),lastError:null});}catch(e){connectionError=e;throw e;}}
         data=ddValidate(await client.call(method,args),method);
@@ -183,7 +187,8 @@ export async function queryDubaiData({env,req,question,intent,hints=[],fetcher=f
   }
   try{
     const responses=[];
-    if(plan.kind==='entities')for(const e of plan.entities)responses.push(await load('get_entity',{type:e.type,slug:e.slug},e.url));
+    if(plan.kind==='section')responses.push(await load('section:'+plan.section,plan.section==='launches'&&plan.year?{year:plan.year}:{},plan.pageUrl));
+    else if(plan.kind==='entities')for(const e of plan.entities)responses.push(await load('get_entity',{type:e.type,slug:e.slug},e.url));
     else if(plan.kind==='market')responses.push(await load('get_market_summary',{},'https://datadubai.ae/market/'));
     else if(plan.kind==='report')responses.push(await load('get_monthly_report',plan.month?{month:plan.month}:{},plan.month?'https://datadubai.ae/report/'+plan.month+'/':undefined));
     else if(plan.kind==='ranking')responses.push(await load('list_rankings',{kind:plan.ranking,limit:plan.limit}));
@@ -197,15 +202,19 @@ export async function queryDubaiData({env,req,question,intent,hints=[],fetcher=f
       else responses.push(search);
     }
     const result=ddEvidence(responses,{question,intent,plan});
-    if(!result.rows.length)return {result:null,reason:'no_matching_detail'};
+    if(!result.rows.length&&plan.kind!=='section')return {result:null,reason:'no_matching_detail'};
     return {result,notice};
   }catch(e){
     const reason=/limit/.test(e.message)?'query_limit':'unavailable';
     try{await ddStatus(env,{state:'degraded',lastError:reason,lastAttemptAt:new Date(now).toISOString()});}catch{}
-    return {result:null,reason};
+    return {result:null,reason,requestedSection:plan.kind==='section'?{id:plan.section,name:DUBAI_SECTIONS[plan.section].name,url:plan.pageUrl}:null};
   }finally{await client.close();}
 }
 function ddEvidence(responses,{question,intent,plan}){
+  if(plan.kind==='section'){
+    const response=responses[0],date=response.data.through||null,e=dubaiSectionEvidence(response.data,plan,question);
+    return {dataset:'datadubai_'+plan.section,rows:e.rows.slice(0,50).map(r=>({...r,data_through:date,source_ref:1})),columns:[...e.columns,'data_through'],total:e.total,dataThrough:date,details:e.details,methodologyNotes:e.notes,provider:{name:'Dubai Data',transport:response.transport,freshness:response.freshness,fetchedAt:response.fetchedAt,cacheHours:6,originalJsonUrl:ddMirrorUrl(plan.pageUrl)},sources:[{id:'datadubai_'+plan.section,name:'Dubai Data · '+DUBAI_SECTIONS[plan.section].name,url:plan.pageUrl,publisher:'Dubai Data / Continental Club Property, based on DLD open data',status:'connected',license:'CC BY 4.0; retain attribution and source link',dataThrough:date}],answer:dubaiSectionAnswer(e,plan,date,response.freshness),slice:plan.section};
+  }
   const rows=[],sources=[],details=[];
   const sourceFor=(url,date,license='CC BY 4.0')=>{
     url=dubaiDataUrl(url)||'https://datadubai.ae/';
@@ -244,14 +253,14 @@ function ddEvidence(responses,{question,intent,plan}){
       details.push({name,window:e.window,truncated:!!d.truncated,registry:e.registry||null,yield_segments:intent.dataset==='yields_by_community'?e.yield_segments:undefined});
       selected=selected.map(r=>({...r,window:e.window||null}));
     }
-    rows.push(...selected.slice(0,50).map(r=>({...r,data_through:date,source_ref:r.source_ref||sourceRef})));
+    rows.push(...selected.slice(0,50).map(r=>({...protectDubaiStatistics(r),data_through:date,source_ref:r.source_ref||sourceRef})));
   }
   const preferred={summary:['name','n','price_median','psf_median','psf_yoy','yield_pct','completion','completion_date','total_units'],developer_projects:['name','developer','n','completion','total_units','status'],bedrooms:['name','label','n','price_median','psf_median','rent_median','yield_pct','quality'],monthly:['name','label','n_sales','median','price'],yearly:['name','year','n','price_median','psf_median','value_total'],report:['label','n','price_median','psf_median','n_yoy','psf_yoy','offplan_share'],ranking:['name','rank','yield_pct','rent_median','n','price_median','psf_median'],search:['name','developer','n','price_median','psf_median','completion','completion_date'],stock:['band','projects','units_total','units_under_construction'],service_charges:['name','buildings','median_aed_sqft','budget_year']}[slice];
   const columns=[...preferred.filter(k=>rows.some(r=>r[k]!==undefined)), 'data_through'];
   const dates=[...new Set(sources.map(s=>s.dataThrough).filter(Boolean))].sort();
   const fetched=[...new Set(responses.map(r=>r.fetchedAt))].sort();
   const freshness=responses.some(r=>r.freshness==='stale')?'stale':responses.every(r=>r.freshness==='cached')?'cached':'fetched';
-  return {dataset:intent.dataset,rows:rows.slice(0,60),columns,total:total||rows.length,sources,details,slice,dataThrough:dates.length===1?dates[0]:dates.length?'Varies by source':null,provider:{name:'Dubai Data',transport:[...new Set(responses.map(r=>r.transport))].join('+'),freshness,fetchedAt:fetched.at(-1),cacheHours:6},answer:ddAnswer(rows,columns,sources,{slice,freshness,total:total||rows.length})};
+  return {dataset:intent.dataset,rows:rows.slice(0,60),columns,total:total||rows.length,sources,details,slice,methodologyNotes:dubaiMethodologyNotes({question,slice,rows}),dataThrough:dates.length===1?dates[0]:dates.length?'Varies by source':null,provider:{name:'Dubai Data',transport:[...new Set(responses.map(r=>r.transport))].join('+'),freshness,fetchedAt:fetched.at(-1),cacheHours:6},answer:ddAnswer(rows,columns,sources,{slice,freshness,total:total||rows.length})};
 }
 function ddAnswer(rows,columns,sources,{slice,freshness,total}){
   let answer=freshness==='stale'?'Dubai Data could not be refreshed. These are cached published figures; check their source dates.':'These are Dubai Data’s published figures, retrieved directly'+(freshness==='cached'?' and served from a recent cache.':'.');

@@ -800,21 +800,23 @@
   },
   {
     "id": "datadubai_construction",
-    "name": "Dubai Data · Construction Progress",
+    "name": "Dubai Data · Construction bands",
     "publisher": "Dubai Data / Continental Club Property",
     "emirate": "Dubai",
     "category": "market",
     "status": "catalogued",
     "url": "https://datadubai.ae/construction/",
     "description": "Projects grouped by the completion percentage recorded at the latest DLD inspection. Inspections are irregular; this is not live site progress.",
-    "license": "Check publisher terms before bulk reuse",
-    "access": "Public reference; not ingested",
+    "license": "CC BY 4.0; attribution and source link required",
+    "access": "Connected on demand in production; six-hour cache; not an imported dataset",
     "dataThrough": null,
     "attribution": "Dubai Data / Continental Club Property",
     "tags": [
-      "DataDubai",
+      "Dubai Data",
+      "JSON",
       "construction"
-    ]
+    ],
+    "directFeed": "construction"
   },
   {
     "id": "datadubai_stock",
@@ -839,39 +841,43 @@
   },
   {
     "id": "datadubai_transactions",
-    "name": "Dubai Data · Latest Registered Sales",
+    "name": "Dubai Data · Latest publisher transactions",
     "publisher": "Dubai Data / Continental Club Property",
     "emirate": "Dubai",
     "category": "market",
     "status": "catalogued",
     "url": "https://datadubai.ae/transactions/",
     "description": "Latest registered-sale log with price, size, type, area and project fields. The page is a recent slice, not the complete transaction archive.",
-    "license": "Check publisher terms before bulk reuse",
-    "access": "Public reference; not ingested",
+    "license": "CC BY 4.0; attribution and source link required",
+    "access": "Connected on demand in production; six-hour cache; not an imported dataset",
     "dataThrough": null,
     "attribution": "Dubai Data / Continental Club Property",
     "tags": [
-      "DataDubai",
-      "transactions"
-    ]
+      "Dubai Data",
+      "JSON",
+      "latest"
+    ],
+    "directFeed": "latest"
   },
   {
     "id": "datadubai_mortgages",
-    "name": "Dubai Data · Mortgages and Gifts",
+    "name": "Dubai Data · Mortgages and gifts",
     "publisher": "Dubai Data / Continental Club Property",
     "emirate": "Dubai",
     "category": "market",
     "status": "catalogued",
     "url": "https://datadubai.ae/mortgages/",
     "description": "Published mortgage and gift registrations, historical counts and amounts. Mortgage amount is a loan size and does not establish property value or LTV.",
-    "license": "Check publisher terms before bulk reuse",
-    "access": "Public reference; not ingested",
+    "license": "CC BY 4.0; attribution and source link required",
+    "access": "Connected on demand in production; six-hour cache; not an imported dataset",
     "dataThrough": null,
     "attribution": "Dubai Data / Continental Club Property",
     "tags": [
-      "DataDubai",
+      "Dubai Data",
+      "JSON",
       "mortgages"
-    ]
+    ],
+    "directFeed": "mortgages"
   },
   {
     "id": "datadubai_compare",
@@ -899,9 +905,9 @@
     "category": "api",
     "status": "catalogued",
     "url": "https://datadubai.ae/mcp/",
-    "description": "Public read-only MCP connected to SWK DATA for dated property statistics, entity details, rankings and monthly reports.",
-    "license": "CC BY 4.0; attribution and source link required",
-    "access": "Direct connection enabled in production; dated results cached for six hours",
+    "description": "Documented public read-only MCP service for querying the same published market figures.",
+    "license": "Check publisher terms before bulk reuse",
+    "access": "Public MCP documented; runtime connection not yet enabled",
     "dataThrough": null,
     "attribution": "Dubai Data / Continental Club Property",
     "tags": [
@@ -1794,56 +1800,6 @@
     ]
   },
   {
-    "id": "swk_developer_inventory",
-    "name": "Authorised Developer Inventory",
-    "publisher": "Participating developers / SWK",
-    "emirate": "UAE",
-    "category": "inventory",
-    "status": "permission_required",
-    "url": "https://www.swkpropertiesuae.com/",
-    "description": "SWK-authorised developer inventory, availability, payment plans, commissions and marketing materials can be connected after delivery and permission. No private developer inventory is included here.",
-    "license": "Check publisher terms before bulk reuse",
-    "access": "Developer feed / authorised files required",
-    "dataThrough": null,
-    "attribution": "Participating developers / SWK",
-    "tags": [
-      "Emaar",
-      "Sobha",
-      "Damac",
-      "Azizi",
-      "Binghatti",
-      "Ellington",
-      "Samana",
-      "Danube",
-      "Imtiaz",
-      "Aldar",
-      "Arada",
-      "Al Hamra",
-      "inventory",
-      "payment plans"
-    ]
-  },
-  {
-    "id": "swk_investors",
-    "name": "SWK Consented Investor CRM",
-    "publisher": "SWK Properties",
-    "emirate": "UAE",
-    "category": "investors",
-    "status": "permission_required",
-    "url": "https://os.swkpropertiesuae.com/",
-    "description": "SWK first-party investor preferences, enquiries and transaction history require authenticated, role-based access and consent. No personal investor records are copied into this public repository or public search.",
-    "license": "Check publisher terms before bulk reuse",
-    "access": "Private authenticated integration required",
-    "dataThrough": null,
-    "attribution": "SWK Properties",
-    "tags": [
-      "investor preferences",
-      "CRM",
-      "leads",
-      "first-party"
-    ]
-  },
-  {
     "id": "private_owner_contacts",
     "name": "Private Owner / Investor Contact Data",
     "publisher": "Not a public dataset",
@@ -1861,5 +1817,145 @@
       "investor contacts",
       "privacy"
     ]
+  },
+  {
+    "id": "datadubai_launches",
+    "name": "Dubai Data · Project launches",
+    "publisher": "Dubai Data / Continental Club Property",
+    "emirate": "Dubai",
+    "category": "reference",
+    "status": "catalogued",
+    "url": "https://datadubai.ae/projects/launches/",
+    "description": "Public project launches JSON feed with publisher provenance and dates.",
+    "license": "CC BY 4.0; attribution and source link required",
+    "access": "Connected on demand in production; six-hour cache; not an imported dataset",
+    "dataThrough": null,
+    "attribution": "Dubai Data / Continental Club Property",
+    "tags": [
+      "Dubai Data",
+      "JSON",
+      "launches"
+    ],
+    "directFeed": "launches"
+  },
+  {
+    "id": "datadubai_affordability",
+    "name": "Dubai Data · Affordability bands",
+    "publisher": "Dubai Data / Continental Club Property",
+    "emirate": "Dubai",
+    "category": "reference",
+    "status": "catalogued",
+    "url": "https://datadubai.ae/affordability/",
+    "description": "Public affordability bands JSON feed with publisher provenance and dates.",
+    "license": "CC BY 4.0; attribution and source link required",
+    "access": "Connected on demand in production; six-hour cache; not an imported dataset",
+    "dataThrough": null,
+    "attribution": "Dubai Data / Continental Club Property",
+    "tags": [
+      "Dubai Data",
+      "JSON",
+      "affordability"
+    ],
+    "directFeed": "affordability"
+  },
+  {
+    "id": "datadubai_handover",
+    "name": "Dubai Data · Declared handover years",
+    "publisher": "Dubai Data / Continental Club Property",
+    "emirate": "Dubai",
+    "category": "reference",
+    "status": "catalogued",
+    "url": "https://datadubai.ae/handover/",
+    "description": "Public declared handover years JSON feed with publisher provenance and dates.",
+    "license": "CC BY 4.0; attribution and source link required",
+    "access": "Connected on demand in production; six-hour cache; not an imported dataset",
+    "dataThrough": null,
+    "attribution": "Dubai Data / Continental Club Property",
+    "tags": [
+      "Dubai Data",
+      "JSON",
+      "handover"
+    ],
+    "directFeed": "handover"
+  },
+  {
+    "id": "datadubai_methodology",
+    "name": "Dubai Data · Methodology",
+    "publisher": "Dubai Data / Continental Club Property",
+    "emirate": "Dubai",
+    "category": "reference",
+    "status": "catalogued",
+    "url": "https://datadubai.ae/methodology/",
+    "description": "Public methodology JSON feed with publisher provenance and dates.",
+    "license": "CC BY 4.0; attribution and source link required",
+    "access": "Connected on demand in production; six-hour cache; not an imported dataset",
+    "dataThrough": null,
+    "attribution": "Dubai Data / Continental Club Property",
+    "tags": [
+      "Dubai Data",
+      "JSON",
+      "methodology"
+    ],
+    "directFeed": "methodology"
+  },
+  {
+    "id": "datadubai_glossary",
+    "name": "Dubai Data · Property glossary",
+    "publisher": "Dubai Data / Continental Club Property",
+    "emirate": "Dubai",
+    "category": "reference",
+    "status": "catalogued",
+    "url": "https://datadubai.ae/glossary/",
+    "description": "Public property glossary JSON feed with publisher provenance and dates.",
+    "license": "CC BY 4.0; attribution and source link required",
+    "access": "Connected on demand in production; six-hour cache; not an imported dataset",
+    "dataThrough": null,
+    "attribution": "Dubai Data / Continental Club Property",
+    "tags": [
+      "Dubai Data",
+      "JSON",
+      "glossary"
+    ],
+    "directFeed": "glossary"
+  },
+  {
+    "id": "datadubai_sources",
+    "name": "Dubai Data · Publisher source coverage",
+    "publisher": "Dubai Data / Continental Club Property",
+    "emirate": "Dubai",
+    "category": "reference",
+    "status": "catalogued",
+    "url": "https://datadubai.ae/sources/",
+    "description": "Public publisher source coverage JSON feed with publisher provenance and dates.",
+    "license": "CC BY 4.0; attribution and source link required",
+    "access": "Connected on demand in production; six-hour cache; not an imported dataset",
+    "dataThrough": null,
+    "attribution": "Dubai Data / Continental Club Property",
+    "tags": [
+      "Dubai Data",
+      "JSON",
+      "sources"
+    ],
+    "directFeed": "sources"
+  },
+  {
+    "id": "datadubai_roi",
+    "name": "Dubai Data · Net yield worked example",
+    "publisher": "Dubai Data / Continental Club Property",
+    "emirate": "Dubai",
+    "category": "reference",
+    "status": "catalogued",
+    "url": "https://datadubai.ae/roi-calculator/",
+    "description": "Public net yield worked example JSON feed with publisher provenance and dates.",
+    "license": "CC BY 4.0; attribution and source link required",
+    "access": "Connected on demand in production; six-hour cache; not an imported dataset",
+    "dataThrough": null,
+    "attribution": "Dubai Data / Continental Club Property",
+    "tags": [
+      "Dubai Data",
+      "JSON",
+      "roi"
+    ],
+    "directFeed": "roi"
   }
 ]
